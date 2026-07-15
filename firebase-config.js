@@ -1,6 +1,6 @@
 // 💖 MNAENCA 2026 - Rose Gold Configuration
 // Firebase: bomk-9f6ec | Cloudinary: kmdcjwoi
-// ✨ PREMIUM: Notifications + Compact Grid + Delete Videos + Mask Reveal
+// ✨ PREMIUM: Notifications + Compact Grid + Delete Videos + Mask Reveal + Black Hole Fade
 
 const firebaseConfig = {
     apiKey: "AIzaSyAAiH5kBtNBfuRbXddoCuLet9IGMG2U7q0",

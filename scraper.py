@@ -342,7 +342,7 @@ def build_auth():
 </html>"""
 
 # ═══════════════════════════════════════════════════════════
-# 💖 3. index.html - الرئيسية مع تقنية Mask Reveal
+# 💖 3. index.html - الرئيسية مع تقنية Mask Reveal المعدلة
 # ═══════════════════════════════════════════════════════════
 
 def build_index():
@@ -391,7 +391,7 @@ def build_index():
 
         #mainApp{display:none;height:100vh;position:relative}
 
-        /* 🎭 MASK REVEAL OVERLAY */
+        /* 🎭 MODIFIED MASK REVEAL OVERLAY - يتلاشى بين الفيديوهات فقط */
         .mask-reveal-overlay {
             position: fixed;
             inset: 0;
@@ -549,7 +549,7 @@ def build_index():
             width: 100vw;
             height: 100vh;
             background: #000;
-            z-index: 9999;
+            z-index: 9998;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -644,7 +644,7 @@ def build_index():
             inset: 0;
             background: rgba(0,0,0,0.96);
             backdrop-filter: blur(30px);
-            z-index: 9999;
+            z-index: 9998;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -770,7 +770,7 @@ def build_index():
     <p style="color:rgba(255,255,255,0.5);font-size:15px">💖 MNAENCA جاري التحميل...</p>
 </div>
 
-<!-- 🎭 MASK REVEAL OVERLAY -->
+<!-- 🎭 UPDATED MASK REVEAL OVERLAY -->
 <div class="mask-reveal-overlay" id="maskRevealOverlay">
     <svg class="mask-reveal-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
         <defs>
@@ -876,7 +876,7 @@ def build_index():
     let currentShareUrl = null;
     let playerVideo = null;
 
-    // 🎭 MASK REVEAL SYSTEM
+    // 🎭 UPDATED MASK REVEAL SYSTEM - يعمل تلقائياً مع التمرير بين الفيديوهات
     const maskOverlay = document.getElementById('maskRevealOverlay');
     const maskCircle = document.getElementById('maskCircle');
     const maskRing = document.getElementById('maskRing');
@@ -884,146 +884,63 @@ def build_index():
     let maskTargetRadius = 0;
     let maskCurrentRadius = 0;
     let maskAnimationId = null;
+    let scrollTimeout = null;
 
     function initMaskReveal() {
         const videosWrap = document.getElementById('videosWrap');
         
+        // تفعيل التأثير تلقائياً عند التمرير
         videosWrap.addEventListener('scroll', () => {
-            if (!maskActive) return;
-            updateMaskPosition();
-        });
-
-        document.addEventListener('mousemove', (e) => {
-            if (!maskActive) return;
-            updateMaskCenter(e.clientX, e.clientY);
-        });
-
-        document.addEventListener('touchmove', (e) => {
-            if (!maskActive) return;
-            updateMaskCenter(e.touches[0].clientX, e.touches[0].clientY);
-        }, { passive: true });
-
-        // Activate mask on double tap/click
-        document.addEventListener('dblclick', (e) => {
-            if (e.target.closest('.sbtn') || e.target.closest('.overlay') || 
-                e.target.closest('.fullscreen-player') || e.target.closest('.image-lightbox')) return;
-            toggleMask(e.clientX, e.clientY);
-        });
-
-        // Long press to activate mask (mobile)
-        let longPressTimer;
-        document.addEventListener('touchstart', (e) => {
-            if (e.target.closest('.sbtn') || e.target.closest('.overlay') || 
-                e.target.closest('.fullscreen-player') || e.target.closest('.image-lightbox')) return;
-            longPressTimer = setTimeout(() => {
-                toggleMask(e.touches[0].clientX, e.touches[0].clientY);
-            }, 500);
-        }, { passive: true });
-
-        document.addEventListener('touchend', () => {
-            clearTimeout(longPressTimer);
-        });
-
-        document.addEventListener('touchmove', () => {
-            clearTimeout(longPressTimer);
-        });
-
-        // Keyboard shortcut
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'm' || e.key === 'M') {
-                const cx = window.innerWidth / 2;
-                const cy = window.innerHeight / 2;
-                toggleMask(cx, cy);
+            // تفعيل القناع
+            if (!maskActive) {
+                maskActive = true;
+                maskOverlay.classList.add('active');
+                maskCurrentRadius = 0;
+                // يظهر من منتصف الشاشة
+                maskCircle.setAttribute('cx', 50);
+                maskCircle.setAttribute('cy', 50);
+                maskRing.setAttribute('cx', 50);
+                maskRing.setAttribute('cy', 50);
+                maskCircle.setAttribute('r', 0);
+                maskRing.setAttribute('r', 0);
+                maskTargetRadius = 70; // حجم كبير نسبياً
+                if (!maskAnimationId) animateMask();
             }
-        });
-    }
 
-    function toggleMask(cx, cy) {
-        if (maskActive) {
-            deactivateMask();
-        } else {
-            activateMask(cx, cy);
-        }
-    }
-
-    function activateMask(cx, cy) {
-        maskActive = true;
-        maskOverlay.classList.add('active');
-        maskCurrentRadius = 0;
-        maskTargetRadius = Math.max(window.innerWidth, window.innerHeight) * 0.8;
-        
-        // Set initial position
-        const svgX = (cx / window.innerWidth) * 100;
-        const svgY = (cy / window.innerHeight) * 100;
-        maskCircle.setAttribute('cx', svgX);
-        maskCircle.setAttribute('cy', svgY);
-        maskRing.setAttribute('cx', svgX);
-        maskRing.setAttribute('cy', svgY);
-        maskCircle.setAttribute('r', 0);
-        maskRing.setAttribute('r', 0);
-
-        animateMask();
+            // إعادة تعيين مؤقت الإخفاء
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                deactivateMask();
+            }, 300); // يختفي بعد 300 مللي ثانية من توقف التمرير
+        }, { passive: true });
     }
 
     function deactivateMask() {
         maskActive = false;
         maskTargetRadius = 0;
-        // Let animation finish shrinking
-        const checkShrink = () => {
-            if (maskCurrentRadius <= 2) {
-                maskOverlay.classList.remove('active');
-                maskCircle.setAttribute('r', 0);
-                maskRing.setAttribute('r', 0);
-                maskCurrentRadius = 0;
-                if (maskAnimationId) {
-                    cancelAnimationFrame(maskAnimationId);
-                    maskAnimationId = null;
-                }
-            } else {
-                requestAnimationFrame(checkShrink);
-            }
-        };
-        checkShrink();
-    }
-
-    function updateMaskCenter(cx, cy) {
-        const svgX = (cx / window.innerWidth) * 100;
-        const svgY = (cy / window.innerHeight) * 100;
-        maskCircle.setAttribute('cx', svgX);
-        maskCircle.setAttribute('cy', svgY);
-        maskRing.setAttribute('cx', svgX);
-        maskRing.setAttribute('cy', svgY);
-    }
-
-    function updateMaskPosition() {
-        if (!maskActive) return;
-        // Smooth radius transition based on scroll position
-        const videosWrap = document.getElementById('videosWrap');
-        const scrollTop = videosWrap.scrollTop;
-        const viewHeight = window.innerHeight;
-        const scrollProgress = (scrollTop % viewHeight) / viewHeight;
-        
-        // Pulse effect based on scroll
-        const pulse = 1 + Math.sin(scrollProgress * Math.PI * 2) * 0.15;
-        maskTargetRadius = Math.max(window.innerWidth, window.innerHeight) * 0.7 * pulse;
+        // متابعة الأنيميشن حتى يختفي تماماً ثم نوقفها
+        if (!maskAnimationId) animateMask();
     }
 
     function animateMask() {
-        if (!maskActive && maskCurrentRadius < 1) {
-            maskAnimationId = null;
-            return;
-        }
-
-        // Smooth interpolation
-        const speed = 0.12;
+        const speed = 0.15;
         maskCurrentRadius += (maskTargetRadius - maskCurrentRadius) * speed;
-        
-        if (Math.abs(maskTargetRadius - maskCurrentRadius) < 0.5) {
+
+        // تقريب القيمة عندما تكون قريبة جداً
+        if (Math.abs(maskTargetRadius - maskCurrentRadius) < 0.2) {
             maskCurrentRadius = maskTargetRadius;
+            if (!maskActive && maskCurrentRadius === 0) {
+                // الإخفاء النهائي
+                maskOverlay.classList.remove('active');
+                maskCircle.setAttribute('r', 0);
+                maskRing.setAttribute('r', 0);
+                maskAnimationId = null;
+                return;
+            }
         }
 
         maskCircle.setAttribute('r', maskCurrentRadius);
-        maskRing.setAttribute('r', maskCurrentRadius * 1.05);
+        maskRing.setAttribute('r', maskCurrentRadius * 1.1); // الحلقة أكبر قليلاً
 
         maskAnimationId = requestAnimationFrame(animateMask);
     }
@@ -1184,7 +1101,7 @@ def build_index():
         document.getElementById('loaderScreen').style.display = 'none';
         document.getElementById('mainApp').style.display = 'block';
         
-        // 🎭 Initialize Mask Reveal
+        // 🎭 Initialize UPDATED Mask Reveal
         initMaskReveal();
     });
 
@@ -1386,8 +1303,8 @@ def build_index():
         return m + ':' + (s < 10 ? '0' : '') + s;
     }
 
-    console.log('💖 MNAENCA Index Ready with Mask Reveal ✨');
-    console.log('🎭 Mask Controls: Double-click = Toggle | M key = Toggle | Long-press (mobile) = Toggle');
+    console.log('💖 MNAENCA Index Ready with Smooth Scroll Mask Reveal ✨');
+    console.log('🎭 Mask Effect: يظهر تلقائياً ويتلاشى عند التمرير بين الفيديوهات');
 </script>
 </body>
 </html>"""
@@ -1482,7 +1399,7 @@ def build_profile():
         /* 💖 PLAYER & LIGHTBOX (Reused from index) */
         .fullscreen-player {
             position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-            background: #000; z-index: 9999; display: flex; align-items: center;
+            background: #000; z-index: 9998; display: flex; align-items: center;
             justify-content: center; opacity: 0; pointer-events: none;
             transition: opacity 0.3s ease; flex-direction: column;
         }
@@ -2245,7 +2162,7 @@ def main():
   📁 الملفات:
      1. firebase-config.js   → إعدادات Firebase + Cloudinary
      2. auth.html            → تسجيل دخول + اشتراك
-     3. index.html           → الرئيسية + 🎭 Mask Reveal + مشغل فيديو
+     3. index.html           → الرئيسية + 🎭 Mask Reveal (تلقائي مع التمرير)
      4. profile.html         → ملف شخصي + فيديوهات متلاصقة
      5. upload.html          → رفع فيديو
      6. chat.html            → دردشة + عارض صور داخلي
@@ -2259,9 +2176,10 @@ def main():
      • Admin: jasim28v@gmail.com
 
   💖 المميزات:
-     • 🎭 Mask Reveal Transition (Rose Gold Glow)
-        - تفعيل: كبسة مزدوجة | ضغطة مطولة (موبايل) | زر M
-        - تأثير دائرة وردية مع توهج ينمو من نقطة اللمس
+     • 🎭 Mask Reveal (يتلاشى تلقائياً بين الفيديوهات فقط)
+        - يظهر وينمو من منتصف الشاشة أثناء التمرير
+        - يختفي تلقائياً بعد 300 مللي ثانية من التوقف
+        - لم يعد يظهر باللمس أو النقر المزدوج
      • 🎥 مشغل فيديو احترافي داخلي
      • 🖼️ عارض صور داخلي
      • 💖 ستايل وردي فاخر مع توهجات بنفسجية

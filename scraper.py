@@ -2,28 +2,27 @@
 """
 ╔══════════════════════════════════════════════════════════════╗
 ║                                                            ║
-║  💖  MNAENCA 2026 - ROSE GOLD ULTRA EDITION  💖       ║
-║     Ultimate Version - 9 Files - 2000+ Lines               ║
+║  🌷  ZHARE 2026 - PINK BLOSSOM ULTRA EDITION  🌷          ║
+║     Ultimate Version - 9 Files - 2200+ Lines               ║
 ║                                                            ║
 ║  🔥  Firebase: bomk-9f6ec                                 ║
-║  ☁️   Cloudinary: kmdcjwoi / fo23_go                      ║
+║  ☁️  Cloudinary: kmdcjwoi / fo23_go                       ║
 ║  👑  Admin: jasim28v@gmail.com                            ║
 ║  👾  Avatars: DiceBear Big Smile (Random)                  ║
-║  💎  Design: Rose Gold Glass Pink + Mask Reveal           ║
+║  🌷  Design: Pink Blossom Fairy Dream                     ║
 ║                                                            ║
 ║  ✨  PREMIUM FEATURES:                                     ║
 ║     • 🔔 Notification System (Working 100%)              ║
 ║     • 🎬 Compact Video Grid with Description              ║
 ║     • 🗑️  Delete Videos from Admin Panel                  ║
 ║     • 🖤 Parallax Cover                                   ║
-║     • 💎 Glass Morphism Dark Layers                       ║
-║     • 👑 Gold Story Rings (Now Rose Gold!)               ║
+║     • 💎 Glass Morphism Pink Layers                       ║
+║     • 🌷 Flower Story Rings                               ║
 ║     • ✨ Pink/Purple Glow Effects                          ║
 ║     • 🌟 Smooth In-App Viewer (No Popups!)               ║
-║     • 🎭 Mask Reveal Transition (Rose Shape)             ║
 ║     • 📱 Floating Bottom Nav                              ║
-║     • توثيق + حظر + حذف فيديوهات                          ║
-║     • 🕳️ Black Hole Fade Transition Between Videos       ║
+║     • 🛡️ توثيق + حظر + حذف فيديوهات                      ║
+║     • 🎥 Video Scroll Transition Effect                   ║
 ║                                                            ║
 ╚══════════════════════════════════════════════════════════════╝
 """
@@ -32,7 +31,7 @@ import os
 import sys
 
 # ═══════════════════════════════════════════════════════════
-# 💖 CONFIGURATION - الإعدادات
+# 🌷 CONFIGURATION - إعدادات ZHARE
 # ═══════════════════════════════════════════════════════════
 
 FIREBASE_CONFIG = {
@@ -51,18 +50,18 @@ UPLOAD_PRESET = "fo23_go"
 ADMIN_EMAILS_JS = "['jasim28v@gmail.com']"
 DICEBEAR_URL = "https://api.dicebear.com/7.x/big-smile/svg"
 
-# 💖 Rose Gold Ultra Palette
-ROSE_COLORS_JS = """[
-    "linear-gradient(135deg, #831843, #9d174d, #be185d)",
-    "linear-gradient(135deg, #4c0519, #831843, #9d174d)",
-    "linear-gradient(135deg, #701a75, #86198f, #a21caf)",
+# 🌷 Pink Blossom Ultra Palette
+ZHARE_COLORS_JS = """[
+    "linear-gradient(135deg, #fbcfe8, #f9a8d4, #f472b6)",
+    "linear-gradient(135deg, #fce7f3, #fbcfe8, #f9a8d4)",
+    "linear-gradient(135deg, #fdf2f8, #fce7f3, #fbcfe8)",
     "linear-gradient(135deg, #ec4899, #db2777, #be185d)",
     "linear-gradient(135deg, #f472b6, #ec4899, #db2777)",
-    "linear-gradient(135deg, #1a0a15, #2d0a1e, #ec4899)"
+    "linear-gradient(135deg, #fdf2f8, #fbcfe8, #ec4899)"
 ]"""
 
 # ═══════════════════════════════════════════════════════════
-# 💖 UTILITY - دوال مساعدة
+# 🌷 UTILITY - دوال مساعدة
 # ═══════════════════════════════════════════════════════════
 
 TOTAL_LINES = 0
@@ -80,17 +79,17 @@ def write(filename, content):
 def section(title):
     """طباعة عنوان القسم"""
     print(f"\n{'='*60}")
-    print(f"  💖 {title}")
+    print(f"  🌷 {title}")
     print(f"{'='*60}")
 
 # ═══════════════════════════════════════════════════════════
-# 💖 1. firebase-config.js
+# 🌷 1. firebase-config.js
 # ═══════════════════════════════════════════════════════════
 
 def build_config():
-    return f"""// 💖 MNAENCA 2026 - Rose Gold Configuration
+    return f"""// 🌷 ZHARE 2026 - Pink Blossom Configuration
 // Firebase: bomk-9f6ec | Cloudinary: kmdcjwoi
-// ✨ PREMIUM: Notifications + Compact Grid + Delete Videos + Mask Reveal + Black Hole Fade
+// ✨ PREMIUM: Notifications + Compact Grid + Delete Videos + Scroll Effect
 
 const firebaseConfig = {{
     apiKey: "{FIREBASE_CONFIG['apiKey']}",
@@ -112,22 +111,22 @@ const db = firebase.database();
 const CLOUD_NAME = "{CLOUD_NAME}";
 const UPLOAD_PRESET = "{UPLOAD_PRESET}";
 
-// 💖 MNAENCA Settings
+// 🌷 ZHARE Settings
 const ADMIN_EMAILS = {ADMIN_EMAILS_JS};
 const DICEBEAR_URL = "{DICEBEAR_URL}";
-const COVER_COLORS = {ROSE_COLORS_JS};
+const COVER_COLORS = {ZHARE_COLORS_JS};
 
-// 💖 App Info
-const APP_NAME = "MNAENCA";
+// 🌷 App Info
+const APP_NAME = "ZHARE";
 const APP_VERSION = "2026.1";
-const PRIMARY_COLOR = "#ec4899";
-const SECONDARY_COLOR = "#f472b6";
+const PRIMARY_COLOR = "#f472b6";
+const SECONDARY_COLOR = "#f9a8d4";
 
-console.log('💖 %c'+APP_NAME+' v'+APP_VERSION+' Ready ✨', 'color: #ec4899; font-size: 16px; font-weight: bold;');
+console.log('🌷 %c'+APP_NAME+' v'+APP_VERSION+' Ready ✨', 'color: #f472b6; font-size: 16px; font-weight: bold;');
 """
 
 # ═══════════════════════════════════════════════════════════
-# 💖 2. auth.html - تسجيل الدخول والاشتراك
+# 🌷 2. auth.html - تسجيل الدخول والاشتراك
 # ═══════════════════════════════════════════════════════════
 
 def build_auth():
@@ -136,7 +135,7 @@ def build_auth():
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>💖 MNAENCA | دخول</title>
+    <title>🌷 ZHARE | دخول</title>
     <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-database-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-auth-compat.js"></script>
@@ -145,45 +144,45 @@ def build_auth():
         *{margin:0;padding:0;box-sizing:border-box}
         body{
             min-height:100vh;
-            background:radial-gradient(ellipse at top, #1a0a15, #0a0a0a, #000);
+            background:radial-gradient(ellipse at top, #fce7f3, #fdf2f8, #fbcfe8);
             display:flex;align-items:center;justify-content:center;
             font-family:'Segoe UI',sans-serif;overflow:hidden;
         }
         .bg-orb{
-            position:fixed;border-radius:50%;filter:blur(130px);opacity:0.3;
+            position:fixed;border-radius:50%;filter:blur(130px);opacity:0.4;
             animation:orbFloat 20s infinite alternate;
         }
-        .bg-orb:nth-child(1){width:400px;height:400px;background:#ec4899;top:-100px;left:-100px}
-        .bg-orb:nth-child(2){width:350px;height:350px;background:#a855f7;bottom:-100px;right:-100px;animation-delay:5s}
-        .bg-orb:nth-child(3){width:300px;height:300px;background:#f472b6;top:50%;left:50%;animation-delay:10s}
+        .bg-orb:nth-child(1){width:400px;height:400px;background:#f9a8d4;top:-100px;left:-100px}
+        .bg-orb:nth-child(2){width:350px;height:350px;background:#f472b6;bottom:-100px;right:-100px;animation-delay:5s}
+        .bg-orb:nth-child(3){width:300px;height:300px;background:#fbcfe8;top:50%;left:50%;animation-delay:10s}
         @keyframes orbFloat{0%{transform:translate(0,0) scale(1)}100%{transform:translate(50px,-50px) scale(1.3)}}
 
         .card{
             position:relative;z-index:1;width:90%;max-width:420px;
-            background:rgba(236,72,153,0.03);
+            background:rgba(255,255,255,0.7);
             backdrop-filter:blur(40px);-webkit-backdrop-filter:blur(40px);
             border-radius:32px;padding:36px 24px;
-            border:1px solid rgba(236,72,153,0.2);
-            box-shadow:0 30px 70px rgba(236,72,153,0.1),inset 0 0 30px rgba(236,72,153,0.02);
+            border:2px solid rgba(244,114,182,0.3);
+            box-shadow:0 30px 70px rgba(236,72,153,0.2),inset 0 0 30px rgba(244,114,182,0.05);
             animation:fadeUp 0.8s ease;
         }
         @keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
 
         .logo{
             width:70px;height:70px;margin:0 auto 20px;
-            background:linear-gradient(135deg, rgba(236,72,153,0.3), rgba(168,85,247,0.3));
+            background:linear-gradient(135deg, #f9a8d4, #f472b6);
             border-radius:20px;display:flex;align-items:center;justify-content:center;
-            font-size:36px;border:1px solid rgba(236,72,153,0.2);
-            box-shadow:0 15px 40px rgba(236,72,153,0.3);
+            font-size:36px;border:1px solid rgba(244,114,182,0.3);
+            box-shadow:0 15px 40px rgba(244,114,182,0.4);
             animation:logoGlow 3s ease-in-out infinite;
         }
-        @keyframes logoGlow{0%,100%{box-shadow:0 15px 40px rgba(236,72,153,0.3)}50%{box-shadow:0 15px 60px rgba(244,114,182,0.7)}}
-        h1{text-align:center;font-size:36px;font-weight:900;background:linear-gradient(to bottom, #fff, #f472b6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}
-        .sub{text-align:center;color:rgba(255,255,255,0.4);font-size:13px;margin-bottom:20px}
+        @keyframes logoGlow{0%,100%{box-shadow:0 15px 40px rgba(244,114,182,0.4)}50%{box-shadow:0 15px 60px rgba(236,72,153,0.8)}}
+        h1{text-align:center;font-size:36px;font-weight:900;background:linear-gradient(to bottom, #be185d, #ec4899, #f472b6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}
+        .sub{text-align:center;color:rgba(190,24,93,0.5);font-size:13px;margin-bottom:20px}
 
-        .tabs{display:flex;gap:4px;background:rgba(236,72,153,0.06);border-radius:40px;padding:4px;margin-bottom:24px}
-        .tab{flex:1;padding:12px;background:none;border:none;color:rgba(255,255,255,0.5);cursor:pointer;border-radius:40px;font-size:14px;transition:all 0.3s;font-weight:500}
-        .tab.active{background:linear-gradient(135deg, #ec4899, #a855f7);color:#fff;box-shadow:0 8px 20px rgba(236,72,153,0.4)}
+        .tabs{display:flex;gap:4px;background:rgba(244,114,182,0.1);border-radius:40px;padding:4px;margin-bottom:24px}
+        .tab{flex:1;padding:12px;background:none;border:none;color:rgba(190,24,93,0.6);cursor:pointer;border-radius:40px;font-size:14px;transition:all 0.3s;font-weight:500}
+        .tab.active{background:linear-gradient(135deg, #f472b6, #ec4899);color:#fff;box-shadow:0 8px 20px rgba(244,114,182,0.5)}
 
         .form{display:none;animation:fadeIn 0.4s ease}
         .form.active{display:block}
@@ -191,35 +190,35 @@ def build_auth():
 
         input{
             width:100%;padding:15px 18px;margin:8px 0;
-            border-radius:50px;background:rgba(236,72,153,0.04);
-            border:1px solid rgba(236,72,153,0.15);color:#fff;
+            border-radius:50px;background:rgba(244,114,182,0.08);
+            border:2px solid rgba(244,114,182,0.2);color:#831843;
             font-size:14px;outline:none;transition:all 0.4s;
         }
-        input:focus{border-color:rgba(236,72,153,0.6);box-shadow:0 0 20px rgba(236,72,153,0.1);background:rgba(236,72,153,0.08)}
-        input::placeholder{color:rgba(255,255,255,0.3)}
+        input:focus{border-color:rgba(236,72,153,0.7);box-shadow:0 0 20px rgba(244,114,182,0.2);background:rgba(244,114,182,0.12)}
+        input::placeholder{color:rgba(190,24,93,0.35)}
 
         button{
             width:100%;padding:15px;margin-top:18px;
-            background:linear-gradient(135deg, #ec4899, #a855f7);
+            background:linear-gradient(135deg, #f472b6, #ec4899);
             border:none;border-radius:50px;color:#fff;
             font-weight:bold;font-size:15px;cursor:pointer;
-            transition:all 0.3s;box-shadow:0 10px 30px rgba(236,72,153,0.4);
+            transition:all 0.3s;box-shadow:0 10px 30px rgba(244,114,182,0.5);
         }
-        button:hover{transform:translateY(-2px);box-shadow:0 20px 40px rgba(236,72,153,0.6)}
+        button:hover{transform:translateY(-2px);box-shadow:0 20px 40px rgba(236,72,153,0.7)}
         button:active{transform:scale(0.97)}
         button:disabled{opacity:0.5;pointer-events:none}
 
-        .msg{text-align:center;color:#fca5a5;font-size:13px;margin-top:12px;min-height:20px}
-        .msg.success{color:#4ade80}
+        .msg{text-align:center;color:#be185d;font-size:13px;margin-top:12px;min-height:20px}
+        .msg.success{color:#059669}
     </style>
 </head>
 <body>
     <div class="bg-orb"></div><div class="bg-orb"></div><div class="bg-orb"></div>
 
     <div class="card">
-        <div class="logo">💖</div>
-        <h1>MNAENCA</h1>
-        <p class="sub">Rose Gold Ultra 2026 ✨</p>
+        <div class="logo">🌷</div>
+        <h1>ZHARE</h1>
+        <p class="sub">Pink Blossom 2026 ✨</p>
 
         <div class="tabs">
             <button class="tab active" id="tabLogin" onclick="switchTab('login')"><i class="fas fa-sign-in-alt"></i> دخول</button>
@@ -337,13 +336,13 @@ def build_auth():
             if(user) { window.location.replace('index.html'); }
         });
 
-        console.log('💖 MNAENCA Auth Ready');
+        console.log('🌷 ZHARE Auth Ready');
     </script>
 </body>
 </html>"""
 
 # ═══════════════════════════════════════════════════════════
-# 💖 3. index.html - الرئيسية مع تقنية Black Hole Fade 🕳️
+# 🌷 3. index.html - الرئيسية (مع مشغل داخلي + تأثير التمرير)
 # ═══════════════════════════════════════════════════════════
 
 def build_index():
@@ -352,24 +351,24 @@ def build_index():
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>💖 MNAENCA | الرئيسية</title>
+    <title>🌷 ZHARE | الرئيسية</title>
     <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-database-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-auth-compat.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         :root{
-            --glass:rgba(236,72,153,0.03);
-            --border:rgba(236,72,153,0.12);
-            --accent:#ec4899;
-            --accent2:#a855f7;
-            --bg:#0a0508;
+            --glass:rgba(244,114,182,0.06);
+            --border:rgba(244,114,182,0.2);
+            --accent:#f472b6;
+            --accent2:#ec4899;
+            --bg:#fdf2f8;
         }
         *{margin:0;padding:0;box-sizing:border-box}
         body{
             font-family:'Segoe UI',sans-serif;
             background:var(--bg);
-            color:#fff;
+            color:#831843;
             height:100vh;overflow:hidden;
             -webkit-tap-highlight-color:transparent;
             user-select:none;
@@ -377,13 +376,13 @@ def build_index():
 
         #loaderScreen{
             position:fixed;inset:0;z-index:9999;
-            background:radial-gradient(ellipse at top, #1a0a15, #0a0a0a, #000);
+            background:radial-gradient(ellipse at top, #fce7f3, #fdf2f8, #fbcfe8);
             display:flex;align-items:center;justify-content:center;
             flex-direction:column;gap:16px;
         }
         .spinner-big{
             width:50px;height:50px;
-            border:4px solid rgba(236,72,153,0.2);
+            border:4px solid rgba(244,114,182,0.2);
             border-top-color:var(--accent);
             border-radius:50%;
             animation:spin 0.8s linear infinite;
@@ -392,66 +391,41 @@ def build_index():
 
         #mainApp{display:none;height:100vh;position:relative}
 
-        /* 🎭 MASK REVEAL OVERLAY */
-        .mask-reveal-overlay {
-            position: fixed;
-            inset: 0;
-            z-index: 9999;
-            pointer-events: none;
-            opacity: 0;
-            transition: opacity 0.1s ease;
-        }
-        .mask-reveal-overlay.active {
-            opacity: 1;
-        }
-        .mask-reveal-svg {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-        }
-        .mask-reveal-shape {
-            fill: #0a0508;
-            filter: drop-shadow(0 0 30px rgba(236,72,153,0.6)) drop-shadow(0 0 60px rgba(168,85,247,0.4));
-            transform-origin: center center;
-            transition: transform 0.15s ease-out;
-        }
-
         .topbar{
             position:fixed;top:10px;left:10px;right:10px;z-index:100;
             display:flex;justify-content:space-between;align-items:center;
             padding:8px 16px;
-            background:rgba(10,5,8,0.7);
+            background:rgba(255,255,255,0.8);
             backdrop-filter:blur(30px);-webkit-backdrop-filter:blur(30px);
-            border:1px solid var(--border);
+            border:2px solid var(--border);
             border-radius:50px;
-            box-shadow:0 8px 32px rgba(236,72,153,0.08);
+            box-shadow:0 8px 32px rgba(244,114,182,0.1);
         }
         .logo-icon{
             width:34px;height:34px;
             background:linear-gradient(135deg,var(--accent),var(--accent2));
             border-radius:50%;display:flex;align-items:center;justify-content:center;
             font-weight:900;font-size:12px;
-            box-shadow:0 0 20px rgba(236,72,153,0.5), 0 0 40px rgba(236,72,153,0.2);
+            box-shadow:0 0 20px rgba(244,114,182,0.6), 0 0 40px rgba(236,72,153,0.3);
             animation:pulseIcon 2s ease-in-out infinite;
         }
-        @keyframes pulseIcon{0%,100%{box-shadow:0 0 20px rgba(236,72,153,0.5)}50%{box-shadow:0 0 35px rgba(168,85,247,0.8)}}
+        @keyframes pulseIcon{0%,100%{box-shadow:0 0 20px rgba(244,114,182,0.6)}50%{box-shadow:0 0 35px rgba(236,72,153,0.9)}}
         .logo-text{
             font-weight:800;font-size:17px;
-            background:linear-gradient(to bottom,#fff,#f472b6);
+            background:linear-gradient(to bottom,#be185d,#ec4899);
             -webkit-background-clip:text;-webkit-text-fill-color:transparent;
             margin-left:8px;
         }
         .tabs{display:flex;gap:4px;background:var(--glass);border-radius:30px;padding:3px}
         .tab{
-            background:none;border:none;color:rgba(255,255,255,0.5);
+            background:none;border:none;color:rgba(190,24,93,0.5);
             padding:7px 16px;cursor:pointer;border-radius:25px;
             font-size:13px;font-weight:500;transition:all 0.3s;
         }
-        .tab.active{background:rgba(236,72,153,0.25);color:#fff}
+        .tab.active{background:rgba(244,114,182,0.3);color:#831843}
         .top-icons{display:flex;gap:16px}
         .top-icon{
-            background:none;border:none;color:rgba(255,255,255,0.7);
+            background:none;border:none;color:rgba(190,24,93,0.7);
             font-size:18px;cursor:pointer;transition:all 0.3s;position:relative;
         }
         .top-icon:hover{color:var(--accent2)}
@@ -460,7 +434,7 @@ def build_index():
             width:10px;height:10px;
             background:#ef4444;
             border-radius:50%;
-            border:2px solid var(--bg);
+            border:2px solid #fff;
             animation:badgePulse 2s ease-in-out infinite;
             display:none;
         }
@@ -473,29 +447,15 @@ def build_index():
         }
         .videos-wrap::-webkit-scrollbar{display:none}
         .vid-card{height:100vh;scroll-snap-align:start;position:relative;background:#000}
-        /* 🕳️ BLACK HOLE FADE - تقنية التلاشي بين الفيديوهات */
         .vid-card video{
             width:100%;height:100%;object-fit:cover;
             opacity:0;
-            transition: opacity 0.5s ease;
+            transform:translateY(-40px);
+            transition:opacity 0.6s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .vid-card.active video{
             opacity:1;
-        }
-        /* 🕳️ تأثير ثقب أسود إضافي عند الانتقال */
-        .vid-card::after{
-            content:'';
-            position:absolute;inset:0;
-            background:radial-gradient(circle at center, transparent 60%, #000 100%);
-            pointer-events:none;z-index:5;
-            opacity:0;
-            transition: opacity 0.5s ease;
-        }
-        .vid-card.active::after{
-            opacity:0;
-        }
-        .vid-card:not(.active)::after{
-            opacity:1;
+            transform:translateY(0);
         }
 
         .vid-info{
@@ -506,18 +466,18 @@ def build_index():
         .author-avatar{
             width:50px;height:50px;border-radius:50%;overflow:hidden;
             cursor:pointer;position:relative;
-            background:linear-gradient(135deg, #ec4899, #a855f7, #f9a8d4);
+            background:linear-gradient(135deg, #f9a8d4, #f472b6, #ec4899);
             padding:3px;
             animation:storyRing 3s ease-in-out infinite;
         }
-        @keyframes storyRing{0%,100%{box-shadow:0 0 15px rgba(236,72,153,0.4)}50%{box-shadow:0 0 25px rgba(168,85,247,0.8)}}
-        .author-avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%;border:2px solid var(--bg)}
+        @keyframes storyRing{0%,100%{box-shadow:0 0 15px rgba(244,114,182,0.5)}50%{box-shadow:0 0 25px rgba(236,72,153,0.9)}}
+        .author-avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%;border:2px solid #000}
         .author-name{
             font-weight:700;font-size:15px;cursor:pointer;
-            display:flex;align-items:center;gap:6px;flex-wrap:wrap;
+            display:flex;align-items:center;gap:6px;flex-wrap:wrap;color:#fff;
         }
         .verified-badge-main{
-            background:linear-gradient(135deg, #ec4899, #a855f7);
+            background:linear-gradient(135deg, #f472b6, #ec4899);
             color:#fff;
             font-size:10px;
             padding:2px 5px;
@@ -528,21 +488,21 @@ def build_index():
             width:18px;
             height:18px;
             font-weight:bold;
-            box-shadow:0 0 12px rgba(244,114,182,0.6);
+            box-shadow:0 0 12px rgba(244,114,182,0.7);
         }
         .btn-follow{
             background:linear-gradient(135deg,var(--accent),var(--accent2));
             padding:5px 14px;border-radius:20px;font-size:11px;
             font-weight:700;border:none;color:#fff;cursor:pointer;
-            box-shadow:0 4px 15px rgba(236,72,153,0.4);
+            box-shadow:0 4px 15px rgba(244,114,182,0.5);
             transition:all 0.3s;
         }
-        .btn-follow:hover{box-shadow:0 8px 25px rgba(236,72,153,0.7);transform:translateY(-1px)}
-        .caption{font-size:14px;margin-bottom:5px;line-height:1.4}
-        .tag{color:var(--accent2);cursor:pointer;font-weight:500}
-        .music{font-size:12px;opacity:0.8;display:flex;align-items:center;gap:6px;cursor:pointer}
+        .btn-follow:hover{box-shadow:0 8px 25px rgba(244,114,182,0.8);transform:translateY(-1px)}
+        .caption{font-size:14px;margin-bottom:5px;line-height:1.4;color:#fff}
+        .tag{color:#fbcfe8;cursor:pointer;font-weight:500}
+        .music{font-size:12px;opacity:0.8;display:flex;align-items:center;gap:6px;cursor:pointer;color:#fff}
         .music-wave{display:flex;gap:2px;align-items:flex-end;height:16px}
-        .music-wave span{width:2px;background:var(--accent2);border-radius:1px;animation:musicWave 1s ease-in-out infinite}
+        .music-wave span{width:2px;background:#fbcfe8;border-radius:1px;animation:musicWave 1s ease-in-out infinite}
         .music-wave span:nth-child(1){height:8px;animation-delay:0s}
         .music-wave span:nth-child(2){height:14px;animation-delay:0.15s}
         .music-wave span:nth-child(3){height:6px;animation-delay:0.3s}
@@ -565,7 +525,7 @@ def build_index():
         @keyframes likePop{0%{transform:scale(1)}50%{transform:scale(1.4)}100%{transform:scale(1)}}
         .sbtn .cnt{font-weight:700;font-size:11px}
 
-        /* 💖 Fullscreen Video Player (In-App) */
+        /* 🌷 Fullscreen Video Player (In-App) */
         .fullscreen-player {
             position: fixed;
             top: 0;
@@ -600,26 +560,26 @@ def build_index():
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: rgba(0,0,0,0.6);
+            background: rgba(255,255,255,0.9);
             backdrop-filter: blur(20px);
             border-radius: 50px;
             padding: 10px 20px;
-            border: 1px solid rgba(236,72,153,0.3);
+            border: 2px solid rgba(244,114,182,0.4);
             z-index: 10000;
-            color: #fff;
+            color: #831843;
             gap: 12px;
             flex-wrap: wrap;
         }
         .player-controls button {
             background: none;
             border: none;
-            color: #fff;
+            color: #831843;
             font-size: 20px;
             cursor: pointer;
             transition: color 0.2s;
             padding: 5px;
         }
-        .player-controls button:hover { color: #f472b6; }
+        .player-controls button:hover { color: #ec4899; }
         .progress-wrap {
             flex: 1;
             display: flex;
@@ -630,14 +590,14 @@ def build_index():
         .progress-bar {
             flex: 1;
             height: 4px;
-            background: rgba(255,255,255,0.2);
+            background: rgba(244,114,182,0.2);
             border-radius: 4px;
             cursor: pointer;
             position: relative;
         }
         .progress-fill {
             height: 100%;
-            background: linear-gradient(90deg, #ec4899, #a855f7);
+            background: linear-gradient(90deg, #f472b6, #ec4899);
             border-radius: 4px;
             width: 0%;
         }
@@ -645,10 +605,10 @@ def build_index():
             position: absolute;
             top: 20px;
             left: 20px;
-            background: rgba(0,0,0,0.5);
+            background: rgba(255,255,255,0.8);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(236,72,153,0.4);
-            color: #fff;
+            border: 2px solid rgba(244,114,182,0.5);
+            color: #831843;
             width: 44px;
             height: 44px;
             border-radius: 50%;
@@ -660,13 +620,13 @@ def build_index():
             z-index: 10001;
             transition: all 0.3s;
         }
-        .close-player:hover { background: rgba(236,72,153,0.3); box-shadow: 0 0 20px rgba(236,72,153,0.5); }
+        .close-player:hover { background: rgba(244,114,182,0.3); box-shadow: 0 0 20px rgba(244,114,182,0.6); }
 
-        /* 💖 Image Lightbox (In-App) */
+        /* 🌷 Image Lightbox (In-App) */
         .image-lightbox {
             position: fixed;
             inset: 0;
-            background: rgba(0,0,0,0.96);
+            background: rgba(253,242,248,0.98);
             backdrop-filter: blur(30px);
             z-index: 9999;
             display: flex;
@@ -686,8 +646,8 @@ def build_index():
             max-height: 80vh;
             border-radius: 16px;
             object-fit: contain;
-            box-shadow: 0 20px 60px rgba(236,72,153,0.2);
-            border: 1px solid rgba(236,72,153,0.15);
+            box-shadow: 0 20px 60px rgba(244,114,182,0.3);
+            border: 2px solid rgba(244,114,182,0.2);
         }
         .lightbox-actions {
             display: flex;
@@ -696,9 +656,9 @@ def build_index():
             z-index: 10000;
         }
         .lightbox-actions button {
-            background: rgba(236,72,153,0.15);
-            border: 1px solid rgba(236,72,153,0.3);
-            color: #fff;
+            background: rgba(244,114,182,0.2);
+            border: 2px solid rgba(244,114,182,0.4);
+            color: #831843;
             width: 48px;
             height: 48px;
             border-radius: 50%;
@@ -709,15 +669,15 @@ def build_index():
             font-size: 18px;
             transition: all 0.3s;
         }
-        .lightbox-actions button:hover { background: rgba(236,72,153,0.4); box-shadow: 0 0 25px rgba(236,72,153,0.4); }
+        .lightbox-actions button:hover { background: rgba(244,114,182,0.5); box-shadow: 0 0 25px rgba(244,114,182,0.5); }
         .close-lightbox {
             position: absolute;
             top: 20px;
             left: 20px;
-            background: rgba(0,0,0,0.5);
+            background: rgba(255,255,255,0.8);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(236,72,153,0.4);
-            color: #fff;
+            border: 2px solid rgba(244,114,182,0.5);
+            color: #831843;
             width: 44px;
             height: 44px;
             border-radius: 50%;
@@ -729,21 +689,21 @@ def build_index():
             z-index: 10001;
         }
 
-        /* 📱 FLOATING BOTTOM NAV */
+        /* 🌷 FLOATING BOTTOM NAV */
         .nav-bottom{
             position:fixed;bottom:12px;left:12px;right:12px;
             display:flex;justify-content:space-around;align-items:center;
             padding:8px 0;
-            background:rgba(10,5,8,0.8);
+            background:rgba(255,255,255,0.9);
             backdrop-filter:blur(30px);-webkit-backdrop-filter:blur(30px);
             z-index:100;
-            border:1px solid var(--border);
+            border:2px solid var(--border);
             border-radius:40px;
-            box-shadow:0 -8px 32px rgba(236,72,153,0.06);
+            box-shadow:0 -8px 32px rgba(244,114,182,0.08);
         }
         .nav-item{
             display:flex;flex-direction:column;align-items:center;gap:3px;
-            background:none;border:none;color:rgba(255,255,255,0.5);
+            background:none;border:none;color:rgba(190,24,93,0.5);
             font-size:10px;cursor:pointer;transition:all 0.3s;text-decoration:none;
         }
         .nav-item i{font-size:22px}
@@ -753,81 +713,52 @@ def build_index():
             background:linear-gradient(135deg,var(--accent),var(--accent2));
             border-radius:50%;display:flex;align-items:center;justify-content:center;
             margin-top:-30px;cursor:pointer;
-            box-shadow:0 10px 30px rgba(236,72,153,0.6), 0 0 40px rgba(236,72,153,0.2);
+            box-shadow:0 10px 30px rgba(244,114,182,0.7), 0 0 40px rgba(236,72,153,0.3);
             border:none;color:#fff;font-size:20px;
             z-index:101;
             transition:all 0.3s;text-decoration:none;
         }
-        .btn-add:hover{transform:scale(1.1);box-shadow:0 15px 40px rgba(236,72,153,0.8)}
+        .btn-add:hover{transform:scale(1.1);box-shadow:0 15px 40px rgba(236,72,153,0.9)}
 
         .toast{
             position:fixed;bottom:120px;left:50%;transform:translateX(-50%);
-            background:rgba(10,5,8,0.95);padding:12px 24px;border-radius:50px;
+            background:rgba(255,255,255,0.95);padding:12px 24px;border-radius:50px;
             z-index:1000;opacity:0;transition:opacity 0.3s;pointer-events:none;
-            border:1px solid rgba(236,72,153,0.3);font-size:13px;
-            box-shadow:0 8px 32px rgba(236,72,153,0.15);
+            border:2px solid rgba(244,114,182,0.4);font-size:13px;color:#831843;
+            box-shadow:0 8px 32px rgba(244,114,182,0.2);
         }
         .toast.show{opacity:1}
 
         .overlay{
-            position:fixed;inset:0;background:rgba(10,5,8,0.97);
+            position:fixed;inset:0;background:rgba(253,242,248,0.98);
             backdrop-filter:blur(40px);z-index:400;overflow-y:auto;
         }
         .overlay-header{
             display:flex;justify-content:space-between;align-items:center;
-            padding:16px;border-bottom:1px solid var(--border);
-            position:sticky;top:0;background:rgba(10,5,8,0.8);
+            padding:16px;border-bottom:2px solid var(--border);
+            position:sticky;top:0;background:rgba(255,255,255,0.8);color:#831843;
         }
         .btn-close{
-            background:rgba(236,72,153,0.1);border:1px solid var(--border);
-            color:#fff;width:36px;height:36px;border-radius:50%;
+            background:rgba(244,114,182,0.15);border:2px solid var(--border);
+            color:#831843;width:36px;height:36px;border-radius:50%;
             display:flex;align-items:center;justify-content:center;
             cursor:pointer;font-size:18px;transition:all 0.3s;
         }
-        .btn-close:hover{background:rgba(236,72,153,0.2)}
+        .btn-close:hover{background:rgba(244,114,182,0.3)}
     </style>
 </head>
 <body>
 
 <div id="loaderScreen">
     <div class="spinner-big"></div>
-    <p style="color:rgba(255,255,255,0.5);font-size:15px">💖 MNAENCA جاري التحميل...</p>
-</div>
-
-<!-- 🎭 MASK REVEAL OVERLAY -->
-<div class="mask-reveal-overlay" id="maskRevealOverlay">
-    <svg class="mask-reveal-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
-        <defs>
-            <mask id="revealMask">
-                <rect width="100" height="100" fill="white" />
-                <circle class="mask-reveal-shape" id="maskCircle" cx="50" cy="50" r="0" fill="black" />
-            </mask>
-            <filter id="maskGlow">
-                <feGaussianBlur stdDeviation="3" result="blur" />
-                <feMerge>
-                    <feMergeNode in="blur" />
-                    <feMergeNode in="SourceGraphic" />
-                </feMerge>
-            </filter>
-        </defs>
-        <rect width="100" height="100" fill="#0a0508" mask="url(#revealMask)" />
-        <circle class="mask-reveal-shape" id="maskRing" cx="50" cy="50" r="0" fill="none" 
-            stroke="url(#roseGradient)" stroke-width="1.5" filter="url(#maskGlow)" opacity="0.8" />
-        <defs>
-            <radialGradient id="roseGradient" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#f472b6" stop-opacity="1" />
-                <stop offset="50%" stop-color="#ec4899" stop-opacity="0.8" />
-                <stop offset="100%" stop-color="#a855f7" stop-opacity="0.4" />
-            </radialGradient>
-        </defs>
-    </svg>
+    <p style="color:rgba(190,24,93,0.5);font-size:15px">🌷 ZHARE جاري التحميل...</p>
 </div>
 
 <div id="mainApp">
     <div class="topbar">
         <div style="display:flex;align-items:center">
-            <div class="logo-icon">💖</div>
-            <span class="logo-text">MNAENCA</span>
+            <div class="logo-icon">🌷</div>
+            <span class="logo-text">ZHARE</span>
         </div>
         <div class="tabs">
             <button class="tab" onclick="switchFeed('following')">متابَعين</button>
@@ -840,14 +771,14 @@ def build_index():
     </div>
 
     <div class="videos-wrap" id="videosWrap">
-        <div style="display:flex;align-items:center;justify-content:center;height:100vh;color:rgba(255,255,255,0.5);flex-direction:column;gap:12px">
-            <i class="fas fa-video" style="font-size:48px;opacity:0.3;color:#ec4899"></i>
+        <div style="display:flex;align-items:center;justify-content:center;height:100vh;color:rgba(190,24,93,0.5);flex-direction:column;gap:12px">
+            <i class="fas fa-video" style="font-size:48px;opacity:0.3;color:#f472b6"></i>
             <p>لا توجد فيديوهات بعد</p>
-            <p style="font-size:12px;opacity:0.5">ارفع أول فيديو! 💖</p>
+            <p style="font-size:12px;opacity:0.5">ارفع أول فيديو! 🌷</p>
         </div>
     </div>
 
-    <!-- 💖 Fullscreen Video Player -->
+    <!-- 🌷 Fullscreen Video Player -->
     <div class="fullscreen-player" id="fullscreenPlayer" onclick="if(event.target===this)closePlayer()">
         <button class="close-player" onclick="closePlayer()"><i class="fas fa-times"></i></button>
         <video id="fullscreenVideo" controls playsinline></video>
@@ -863,11 +794,11 @@ def build_index():
                 <span id="duration">0:00</span>
             </div>
             <button onclick="toggleMutePlayer()"><i class="fas fa-volume-up" id="muteIcon"></i></button>
-            <a id="downloadLink" href="#" download style="color:#f472b6;text-decoration:none;margin-left:10px;"><i class="fas fa-download"></i></a>
+            <a id="downloadLink" href="#" download style="color:#ec4899;text-decoration:none;margin-left:10px;"><i class="fas fa-download"></i></a>
         </div>
     </div>
 
-    <!-- 💖 Image Lightbox -->
+    <!-- 🌷 Image Lightbox -->
     <div class="image-lightbox" id="imageLightbox" onclick="if(event.target===this)closeLightbox()">
         <button class="close-lightbox" onclick="closeLightbox()"><i class="fas fa-times"></i></button>
         <img id="lightboxImage" src="" alt="صورة">
@@ -900,159 +831,7 @@ def build_index():
     let currentShareUrl = null;
     let playerVideo = null;
 
-    // 🎭 MASK REVEAL SYSTEM
-    const maskOverlay = document.getElementById('maskRevealOverlay');
-    const maskCircle = document.getElementById('maskCircle');
-    const maskRing = document.getElementById('maskRing');
-    let maskActive = false;
-    let maskTargetRadius = 0;
-    let maskCurrentRadius = 0;
-    let maskAnimationId = null;
-
-    function initMaskReveal() {
-        const videosWrap = document.getElementById('videosWrap');
-        
-        videosWrap.addEventListener('scroll', () => {
-            if (!maskActive) return;
-            updateMaskPosition();
-        });
-
-        document.addEventListener('mousemove', (e) => {
-            if (!maskActive) return;
-            updateMaskCenter(e.clientX, e.clientY);
-        });
-
-        document.addEventListener('touchmove', (e) => {
-            if (!maskActive) return;
-            updateMaskCenter(e.touches[0].clientX, e.touches[0].clientY);
-        }, { passive: true });
-
-        // Activate mask on double tap/click
-        document.addEventListener('dblclick', (e) => {
-            if (e.target.closest('.sbtn') || e.target.closest('.overlay') || 
-                e.target.closest('.fullscreen-player') || e.target.closest('.image-lightbox')) return;
-            toggleMask(e.clientX, e.clientY);
-        });
-
-        // Long press to activate mask (mobile)
-        let longPressTimer;
-        document.addEventListener('touchstart', (e) => {
-            if (e.target.closest('.sbtn') || e.target.closest('.overlay') || 
-                e.target.closest('.fullscreen-player') || e.target.closest('.image-lightbox')) return;
-            longPressTimer = setTimeout(() => {
-                toggleMask(e.touches[0].clientX, e.touches[0].clientY);
-            }, 500);
-        }, { passive: true });
-
-        document.addEventListener('touchend', () => {
-            clearTimeout(longPressTimer);
-        });
-
-        document.addEventListener('touchmove', () => {
-            clearTimeout(longPressTimer);
-        });
-
-        // Keyboard shortcut
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'm' || e.key === 'M') {
-                const cx = window.innerWidth / 2;
-                const cy = window.innerHeight / 2;
-                toggleMask(cx, cy);
-            }
-        });
-    }
-
-    function toggleMask(cx, cy) {
-        if (maskActive) {
-            deactivateMask();
-        } else {
-            activateMask(cx, cy);
-        }
-    }
-
-    function activateMask(cx, cy) {
-        maskActive = true;
-        maskOverlay.classList.add('active');
-        maskCurrentRadius = 0;
-        maskTargetRadius = Math.max(window.innerWidth, window.innerHeight) * 0.8;
-        
-        // Set initial position
-        const svgX = (cx / window.innerWidth) * 100;
-        const svgY = (cy / window.innerHeight) * 100;
-        maskCircle.setAttribute('cx', svgX);
-        maskCircle.setAttribute('cy', svgY);
-        maskRing.setAttribute('cx', svgX);
-        maskRing.setAttribute('cy', svgY);
-        maskCircle.setAttribute('r', 0);
-        maskRing.setAttribute('r', 0);
-
-        animateMask();
-    }
-
-    function deactivateMask() {
-        maskActive = false;
-        maskTargetRadius = 0;
-        // Let animation finish shrinking
-        const checkShrink = () => {
-            if (maskCurrentRadius <= 2) {
-                maskOverlay.classList.remove('active');
-                maskCircle.setAttribute('r', 0);
-                maskRing.setAttribute('r', 0);
-                maskCurrentRadius = 0;
-                if (maskAnimationId) {
-                    cancelAnimationFrame(maskAnimationId);
-                    maskAnimationId = null;
-                }
-            } else {
-                requestAnimationFrame(checkShrink);
-            }
-        };
-        checkShrink();
-    }
-
-    function updateMaskCenter(cx, cy) {
-        const svgX = (cx / window.innerWidth) * 100;
-        const svgY = (cy / window.innerHeight) * 100;
-        maskCircle.setAttribute('cx', svgX);
-        maskCircle.setAttribute('cy', svgY);
-        maskRing.setAttribute('cx', svgX);
-        maskRing.setAttribute('cy', svgY);
-    }
-
-    function updateMaskPosition() {
-        if (!maskActive) return;
-        // Smooth radius transition based on scroll position
-        const videosWrap = document.getElementById('videosWrap');
-        const scrollTop = videosWrap.scrollTop;
-        const viewHeight = window.innerHeight;
-        const scrollProgress = (scrollTop % viewHeight) / viewHeight;
-        
-        // Pulse effect based on scroll
-        const pulse = 1 + Math.sin(scrollProgress * Math.PI * 2) * 0.15;
-        maskTargetRadius = Math.max(window.innerWidth, window.innerHeight) * 0.7 * pulse;
-    }
-
-    function animateMask() {
-        if (!maskActive && maskCurrentRadius < 1) {
-            maskAnimationId = null;
-            return;
-        }
-
-        // Smooth interpolation
-        const speed = 0.12;
-        maskCurrentRadius += (maskTargetRadius - maskCurrentRadius) * speed;
-        
-        if (Math.abs(maskTargetRadius - maskCurrentRadius) < 0.5) {
-            maskCurrentRadius = maskTargetRadius;
-        }
-
-        maskCircle.setAttribute('r', maskCurrentRadius);
-        maskRing.setAttribute('r', maskCurrentRadius * 1.05);
-
-        maskAnimationId = requestAnimationFrame(animateMask);
-    }
-
-    // 💖 Player Functions
+    // 🌷 Player Functions
     function openPlayer(url, title) {
         const player = document.getElementById('fullscreenPlayer');
         const video = document.getElementById('fullscreenVideo');
@@ -1113,7 +892,7 @@ def build_index():
     }
     window.toggleMutePlayer = toggleMutePlayer;
 
-    // 💖 Lightbox Functions
+    // 🌷 Lightbox Functions
     function openLightbox(url) {
         const lb = document.getElementById('imageLightbox');
         const img = document.getElementById('lightboxImage');
@@ -1207,9 +986,6 @@ def build_index():
 
         document.getElementById('loaderScreen').style.display = 'none';
         document.getElementById('mainApp').style.display = 'block';
-        
-        // 🎭 Initialize Mask Reveal
-        initMaskReveal();
     });
 
     async function sendNotification(toUserId, fromUsername, msg) {
@@ -1227,7 +1003,7 @@ def build_index():
         if (!container) return;
         let filtered = currentFeed === 'forYou' ? allVideos : allVideos.filter(v => currentUserData?.following?.[v.sender]);
         if (!filtered.length) {
-            container.innerHTML = `<div style="display:flex;align-items:center;justify-content:center;height:100vh;color:rgba(255,255,255,0.5);flex-direction:column;gap:12px"><i class="fas fa-video" style="font-size:48px;opacity:0.3;color:#ec4899"></i><p>${currentFeed === 'forYou' ? 'لا توجد فيديوهات بعد' : 'تابع مستخدمين لرؤية فيديوهاتهم'}</p></div>`;
+            container.innerHTML = `<div style="display:flex;align-items:center;justify-content:center;height:100vh;color:rgba(190,24,93,0.5);flex-direction:column;gap:12px"><i class="fas fa-video" style="font-size:48px;opacity:0.3;color:#f472b6"></i><p>${currentFeed === 'forYou' ? 'لا توجد فيديوهات بعد' : 'تابع مستخدمين لرؤية فيديوهاتهم'}</p></div>`;
             return;
         }
         container.innerHTML = '';
@@ -1260,7 +1036,7 @@ def build_index():
                 </div>
                 <div class="side-btns">
                     <button class="sbtn" onclick="toggleMute()"><i class="fas ${isMuted ? 'fa-volume-mute' : 'fa-volume-up'}"></i></button>
-                    <button class="sbtn like-btn ${isLiked ? 'liked' : ''}" onclick="toggleLike('${video.id}', this)"><i class="fas fa-heart"></i><span class="cnt">${video.likes || 0}</span></button>
+                    <button class="sbtn like-btn ${isLiked ? 'liked' : ''}" onclick="toggleLike('${video.id}', this)">🌷<span class="cnt">${video.likes || 0}</span></button>
                     <button class="sbtn" onclick="openComments('${video.id}')"><i class="fas fa-comment"></i><span class="cnt">${commentsCount}</span></button>
                     <button class="sbtn" onclick="openPlayer('${video.url}', 'video.mp4')"><i class="fas fa-expand"></i></button>
                     <button class="sbtn" onclick="openShare('${video.url}')"><i class="fas fa-share"></i></button>
@@ -1281,21 +1057,19 @@ def build_index():
         else { window.location.href = 'profile.html?uid=' + userId; }
     }
 
-    // 🕳️ BLACK HOLE FADE OBSERVER - تقنية التلاشي بين الفيديوهات
     function initVideoObserver() {
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 const video = entry.target.querySelector('video');
+                const card = entry.target;
                 if (entry.isIntersecting) {
                     if (!video.src) video.src = video.dataset.src;
                     video.muted = isMuted;
-                    // 🕳️ تفعيل التلاشي - إضافة كلاس active للظهور
-                    entry.target.classList.add('active');
                     video.play().catch(() => {});
+                    card.classList.add('active');
                 } else {
-                    // 🕳️ إزالة كلاس active للإخفاء بتأثير التلاشي
-                    entry.target.classList.remove('active');
                     video.pause();
+                    card.classList.remove('active');
                 }
             });
         }, { threshold: 0.65 });
@@ -1317,7 +1091,7 @@ def build_index():
         else { 
             likes++; likedBy[currentUser.uid] = true;
             if (video.sender && video.sender !== currentUser.uid) {
-                sendNotification(video.sender, currentUserData?.username, 'أعجب بفيديو الخاص بك ❤️');
+                sendNotification(video.sender, currentUserData?.username, 'أعجب بفيديو الخاص بك 🌷');
             }
         }
         await ref.update({ likes, likedBy });
@@ -1334,7 +1108,7 @@ def build_index():
         if (snap.exists()) { await userRef.remove(); await targetRef.remove(); btn.innerHTML = '<i class="fas fa-user-plus"></i> متابعة'; }
         else { 
             await userRef.set(true); await targetRef.set(true); btn.innerHTML = '<i class="fas fa-user-check"></i> متابع';
-            sendNotification(userId, currentUserData?.username, 'بدأ بمتابعتك 👤');
+            sendNotification(userId, currentUserData?.username, 'بدأ بمتابعتك 🌷');
         }
     }
 
@@ -1352,9 +1126,9 @@ def build_index():
         let commentsList = '';
         Object.values(comments).reverse().forEach(c => {
             const user = allUsers[c.userId] || { username: c.username || 'مستخدم' };
-            commentsList += `<div style="display:flex;gap:10px;padding:10px 0;border-bottom:1px solid rgba(236,72,153,0.1);animation:fadeIn 0.3s ease"><img src="${user.avatarUrl || (DICEBEAR_URL + '?seed=' + c.userId)}" style="width:36px;height:36px;border-radius:50%"><div><div style="font-weight:600">@${user.username}</div><div style="font-size:13px;opacity:0.8;margin-top:2px">${c.text}</div></div></div>`;
+            commentsList += `<div style="display:flex;gap:10px;padding:10px 0;border-bottom:1px solid rgba(244,114,182,0.1);animation:fadeIn 0.3s ease"><img src="${user.avatarUrl || (DICEBEAR_URL + '?seed=' + c.userId)}" style="width:36px;height:36px;border-radius:50%"><div><div style="font-weight:600">@${user.username}</div><div style="font-size:13px;opacity:0.8;margin-top:2px">${c.text}</div></div></div>`;
         });
-        showOverlay('💬 التعليقات', commentsList + `<div style="display:flex;gap:8px;padding-top:12px"><input type="text" id="cmtInput" placeholder="أضف تعليقاً..." style="flex:1;padding:12px;border-radius:30px;background:rgba(236,72,153,0.04);border:1px solid rgba(236,72,153,0.15);color:#fff;outline:none"><button onclick="addComment('${videoId}')" style="background:linear-gradient(135deg,#ec4899,#a855f7);border:none;color:#fff;padding:12px 20px;border-radius:30px;font-weight:700;cursor:pointer;white-space:nowrap">نشر</button></div>`);
+        showOverlay('💬 التعليقات', commentsList + `<div style="display:flex;gap:8px;padding-top:12px"><input type="text" id="cmtInput" placeholder="أضف تعليقاً..." style="flex:1;padding:12px;border-radius:30px;background:rgba(244,114,182,0.06);border:1px solid rgba(244,114,182,0.2);color:#831843;outline:none"><button onclick="addComment('${videoId}')" style="background:linear-gradient(135deg,#f472b6,#ec4899);border:none;color:#fff;padding:12px 20px;border-radius:30px;font-weight:700;cursor:pointer;white-space:nowrap">نشر</button></div>`);
     }
     window.addComment = async function(videoId) {
         const input = document.getElementById('cmtInput');
@@ -1376,11 +1150,11 @@ def build_index():
         const items = Object.values(ns).reverse();
         let notifHTML = '';
         if (!items.length) {
-            notifHTML = '<div style="text-align:center;opacity:0.5;padding:40px"><i class="fas fa-bell" style="font-size:48px;color:#ec4899;margin-bottom:12px;display:block"></i><p>لا توجد إشعارات</p></div>';
+            notifHTML = '<div style="text-align:center;opacity:0.5;padding:40px"><i class="fas fa-bell" style="font-size:48px;color:#f472b6;margin-bottom:12px;display:block"></i><p>لا توجد إشعارات</p></div>';
         } else {
             items.forEach(n => {
-                notifHTML += `<div style="display:flex;gap:12px;padding:14px;border-bottom:1px solid rgba(236,72,153,0.1);align-items:center;animation:fadeIn 0.3s ease">
-                    <div style="width:40px;height:40px;border-radius:50%;background:rgba(236,72,153,0.15);display:flex;align-items:center;justify-content:center;font-size:18px;color:#ec4899"><i class="fas fa-bell"></i></div>
+                notifHTML += `<div style="display:flex;gap:12px;padding:14px;border-bottom:1px solid rgba(244,114,182,0.1);align-items:center;animation:fadeIn 0.3s ease">
+                    <div style="width:40px;height:40px;border-radius:50%;background:rgba(244,114,182,0.2);display:flex;align-items:center;justify-content:center;font-size:18px;color:#ec4899"><i class="fas fa-bell"></i></div>
                     <div><div style="font-weight:600">${n.from || 'مستخدم'}</div><div style="font-size:12px;opacity:0.6;margin-top:2px">${n.msg || ''}</div><div style="font-size:10px;opacity:0.3;margin-top:4px">${new Date(n.timestamp).toLocaleString('ar-SA')}</div></div></div>`;
             });
         }
@@ -1391,14 +1165,14 @@ def build_index():
     }
 
     function openSearch() {
-        showOverlay('🔍 بحث', `<input type="text" id="searchQ" onkeyup="doSearch()" placeholder="ابحث عن مستخدمين، فيديوهات..." style="width:100%;padding:14px;border-radius:30px;background:rgba(236,72,153,0.04);border:1px solid rgba(236,72,153,0.15);color:#fff;font-size:14px;outline:none;margin-bottom:16px"><div id="searchR"></div>`);
+        showOverlay('🔍 بحث', `<input type="text" id="searchQ" onkeyup="doSearch()" placeholder="ابحث عن مستخدمين، فيديوهات..." style="width:100%;padding:14px;border-radius:30px;background:rgba(244,114,182,0.06);border:1px solid rgba(244,114,182,0.2);color:#831843;font-size:14px;outline:none;margin-bottom:16px"><div id="searchR"></div>`);
         window.doSearch = function() {
             const query = document.getElementById('searchQ').value.toLowerCase();
             const resultsDiv = document.getElementById('searchR');
             if (!query) { resultsDiv.innerHTML = ''; return; }
             const users = Object.values(allUsers).filter(u => u.username?.toLowerCase().includes(query));
             const vids = allVideos.filter(v => (v.description || '').toLowerCase().includes(query));
-            resultsDiv.innerHTML = `${users.length ? `<div style="margin-bottom:16px"><h4 style="font-size:12px;opacity:0.5;margin-bottom:8px"><i class="fas fa-users"></i> مستخدمين</h4>${users.map(u => `<div onclick="openUserProfile('${u.uid || Object.keys(allUsers).find(k=>allUsers[k]===u)}')" style="display:flex;align-items:center;gap:10px;padding:10px;cursor:pointer;border-bottom:1px solid rgba(236,72,153,0.1)"><img src="${u.avatarUrl || (DICEBEAR_URL + '?seed=' + (u.uid || u.username))}" style="width:40px;height:40px;border-radius:50%"><div>@${u.username} ${u.isVerified ? '<span class="verified-badge-main"><i class="fas fa-check"></i></span>' : ''}</div></div>`).join('')}</div>` : ''}${vids.length ? `<div><h4 style="font-size:12px;opacity:0.5;margin-bottom:8px"><i class="fas fa-video"></i> فيديوهات</h4>${vids.map(v => `<div onclick="openPlayer('${v.url}', 'video.mp4')" style="display:flex;align-items:center;gap:10px;padding:10px;cursor:pointer;border-bottom:1px solid rgba(236,72,153,0.1)"><i class="fas fa-play-circle" style="color:#ec4899;font-size:20px"></i><span style="font-size:13px">${(v.description || 'فيديو').substring(0, 40)}</span></div>`).join('')}</div>` : ''}${!users.length && !vids.length ? '<div style="text-align:center;opacity:0.5;padding:30px">لا توجد نتائج</div>' : ''}`;
+            resultsDiv.innerHTML = `${users.length ? `<div style="margin-bottom:16px"><h4 style="font-size:12px;opacity:0.5;margin-bottom:8px"><i class="fas fa-users"></i> مستخدمين</h4>${users.map(u => `<div onclick="openUserProfile('${u.uid || Object.keys(allUsers).find(k=>allUsers[k]===u)}')" style="display:flex;align-items:center;gap:10px;padding:10px;cursor:pointer;border-bottom:1px solid rgba(244,114,182,0.1)"><img src="${u.avatarUrl || (DICEBEAR_URL + '?seed=' + (u.uid || u.username))}" style="width:40px;height:40px;border-radius:50%"><div>@${u.username} ${u.isVerified ? '<span class="verified-badge-main"><i class="fas fa-check"></i></span>' : ''}</div></div>`).join('')}</div>` : ''}${vids.length ? `<div><h4 style="font-size:12px;opacity:0.5;margin-bottom:8px"><i class="fas fa-video"></i> فيديوهات</h4>${vids.map(v => `<div onclick="openPlayer('${v.url}', 'video.mp4')" style="display:flex;align-items:center;gap:10px;padding:10px;cursor:pointer;border-bottom:1px solid rgba(244,114,182,0.1)"><i class="fas fa-play-circle" style="color:#f472b6;font-size:20px"></i><span style="font-size:13px">${(v.description || 'فيديو').substring(0, 40)}</span></div>`).join('')}</div>` : ''}${!users.length && !vids.length ? '<div style="text-align:center;opacity:0.5;padding:30px">لا توجد نتائج</div>' : ''}`;
         };
         setTimeout(() => { const input = document.getElementById('searchQ'); if (input) input.focus(); }, 300);
     }
@@ -1417,15 +1191,13 @@ def build_index():
         return m + ':' + (s < 10 ? '0' : '') + s;
     }
 
-    console.log('💖 MNAENCA Index Ready with Black Hole Fade 🕳️✨');
-    console.log('🎭 Mask Controls: Double-click = Toggle | M key = Toggle | Long-press (mobile) = Toggle');
-    console.log('🕳️ Black Hole Fade: Smooth opacity transition between videos');
+    console.log('🌷 ZHARE Index Ready ✨');
 </script>
 </body>
 </html>"""
 
 # ═══════════════════════════════════════════════════════════
-# 💖 4. profile.html - ملف شخصي مع فيديوهات متلاصقة + وصف
+# 🌷 4. profile.html - ملف شخصي مع فيديوهات
 # ═══════════════════════════════════════════════════════════
 
 def build_profile():
@@ -1434,52 +1206,52 @@ def build_profile():
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>💖 MNAENCA | ملف شخصي</title>
+    <title>🌷 ZHARE | ملف شخصي</title>
     <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-database-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-auth-compat.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
-        :root{--glass:rgba(236,72,153,0.04);--border:rgba(236,72,153,0.15);--accent:#ec4899;--accent2:#a855f7;--bg:#0a0508;--card:rgba(236,72,153,0.06)}
+        :root{--glass:rgba(244,114,182,0.06);--border:rgba(244,114,182,0.2);--accent:#f472b6;--accent2:#ec4899;--bg:#fdf2f8;--card:rgba(244,114,182,0.08)}
         *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:#fff;min-height:100vh;overflow-y:auto;overflow-x:hidden;-webkit-tap-highlight-color:transparent}
+        body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:#831843;min-height:100vh;overflow-y:auto;overflow-x:hidden;-webkit-tap-highlight-color:transparent}
         .cover-section{position:relative;width:100%;height:260px;overflow:hidden;cursor:pointer}
         .cover-img{width:100%;height:130%;object-fit:cover;transition:transform 0.1s linear;transform:translateY(0)}
-        .cover-gradient{position:absolute;inset:0;background:linear-gradient(to bottom, transparent 30%, rgba(10,5,8,0.4) 60%, rgba(10,5,8,0.95) 100%);pointer-events:none;z-index:1}
-        .cover-glow{position:absolute;inset:0;background:radial-gradient(ellipse at center, rgba(236,72,153,0.15) 0%, transparent 70%);pointer-events:none;z-index:2}
-        .cover-edit-btn{position:absolute;top:12px;left:12px;background:rgba(0,0,0,0.5);backdrop-filter:blur(15px);width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:5;border:1px solid rgba(236,72,153,0.3);color:#fff;font-size:14px;transition:all 0.3s;box-shadow:0 4px 15px rgba(0,0,0,0.3)}
-        .cover-edit-btn:hover{background:rgba(236,72,153,0.4);box-shadow:0 0 20px rgba(236,72,153,0.5)}
-        .btn-back{position:fixed;top:20px;right:20px;background:rgba(0,0,0,0.5);backdrop-filter:blur(15px);width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:50;border:1px solid var(--border);color:#fff;font-size:16px;transition:all 0.3s}
-        .btn-back:hover{background:rgba(236,72,153,0.3);box-shadow:0 0 20px rgba(236,72,153,0.4)}
+        .cover-gradient{position:absolute;inset:0;background:linear-gradient(to bottom, transparent 30%, rgba(253,242,248,0.4) 60%, rgba(253,242,248,0.95) 100%);pointer-events:none;z-index:1}
+        .cover-glow{position:absolute;inset:0;background:radial-gradient(ellipse at center, rgba(244,114,182,0.2) 0%, transparent 70%);pointer-events:none;z-index:2}
+        .cover-edit-btn{position:absolute;top:12px;left:12px;background:rgba(255,255,255,0.7);backdrop-filter:blur(15px);width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:5;border:2px solid rgba(244,114,182,0.4);color:#831843;font-size:14px;transition:all 0.3s;box-shadow:0 4px 15px rgba(0,0,0,0.1)}
+        .cover-edit-btn:hover{background:rgba(244,114,182,0.5);box-shadow:0 0 20px rgba(244,114,182,0.6)}
+        .btn-back{position:fixed;top:20px;right:20px;background:rgba(255,255,255,0.7);backdrop-filter:blur(15px);width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:50;border:2px solid var(--border);color:#831843;font-size:16px;transition:all 0.3s}
+        .btn-back:hover{background:rgba(244,114,182,0.4);box-shadow:0 0 20px rgba(244,114,182,0.5)}
         .avatar-wrap{position:relative;z-index:2;margin-top:-60px;display:flex;justify-content:center}
-        .avatar-lg{width:120px;height:120px;border-radius:50%;overflow:hidden;cursor:pointer;background:linear-gradient(135deg, #ec4899, #a855f7, #f9a8d4);padding:3px;box-shadow:0 0 30px rgba(236,72,153,0.4), 0 0 60px rgba(236,72,153,0.1);animation:avatarGlow 3s ease-in-out infinite}
-        @keyframes avatarGlow{0%,100%{box-shadow:0 0 30px rgba(236,72,153,0.4), 0 0 60px rgba(236,72,153,0.1)}50%{box-shadow:0 0 40px rgba(168,85,247,0.7), 0 0 80px rgba(236,72,153,0.3)}}
+        .avatar-lg{width:120px;height:120px;border-radius:50%;overflow:hidden;cursor:pointer;background:linear-gradient(135deg, #fbcfe8, #f9a8d4, #f472b6);padding:3px;box-shadow:0 0 30px rgba(244,114,182,0.5), 0 0 60px rgba(236,72,153,0.2);animation:avatarGlow 3s ease-in-out infinite}
+        @keyframes avatarGlow{0%,100%{box-shadow:0 0 30px rgba(244,114,182,0.5), 0 0 60px rgba(236,72,153,0.2)}50%{box-shadow:0 0 40px rgba(236,72,153,0.8), 0 0 80px rgba(244,114,182,0.4)}}
         .avatar-lg img{width:100%;height:100%;object-fit:cover;border-radius:50%;border:3px solid var(--bg)}
-        .avatar-edit-btn{position:absolute;bottom:5px;right:5px;width:30px;height:30px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;border:2px solid var(--bg);color:#fff;font-size:12px;box-shadow:0 0 15px rgba(236,72,153,0.5)}
+        .avatar-edit-btn{position:absolute;bottom:5px;right:5px;width:30px;height:30px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;border:2px solid var(--bg);color:#fff;font-size:12px;box-shadow:0 0 15px rgba(244,114,182,0.6)}
         .online-dot{position:absolute;top:10px;right:10px;width:18px;height:18px;background:#22c55e;border-radius:50%;border:3px solid var(--bg);z-index:3;box-shadow:0 0 10px rgba(34,197,94,0.6)}
         .profile-info{padding:20px 20px 10px;text-align:center}
         .username{font-size:22px;font-weight:800;margin-bottom:4px;display:flex;align-items:center;justify-content:center;gap:8px}
         .bio-text{font-size:13px;opacity:0.7;margin-bottom:8px;max-width:320px;margin-left:auto;margin-right:auto;line-height:1.5}
         .contact-info{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:8px;font-size:12px}
         .contact-info a{color:var(--accent2);text-decoration:none;display:flex;align-items:center;gap:5px;background:var(--card);padding:6px 14px;border-radius:20px;border:1px solid var(--border);transition:all 0.3s}
-        .contact-info a:hover{background:rgba(236,72,153,0.15);box-shadow:0 0 15px rgba(236,72,153,0.2)}
+        .contact-info a:hover{background:rgba(244,114,182,0.2);box-shadow:0 0 15px rgba(244,114,182,0.3)}
         .last-seen{font-size:11px;opacity:0.5;display:flex;align-items:center;justify-content:center;gap:5px;margin-top:6px}
-        .stats-row{display:flex;justify-content:center;gap:30px;margin:15px 20px;padding:18px;background:rgba(236,72,153,0.04);backdrop-filter:blur(20px);border-radius:20px;border:1px solid var(--border);box-shadow:0 8px 32px rgba(0,0,0,0.2)}
+        .stats-row{display:flex;justify-content:center;gap:30px;margin:15px 20px;padding:18px;background:rgba(244,114,182,0.06);backdrop-filter:blur(20px);border-radius:20px;border:2px solid var(--border);box-shadow:0 8px 32px rgba(0,0,0,0.05)}
         .stat-item{text-align:center;cursor:pointer;transition:transform 0.2s}
         .stat-item:hover{transform:scale(1.05)}
         .stat-val{font-size:20px;font-weight:700;color:var(--accent2)}
         .stat-lbl{font-size:10px;opacity:0.6;margin-top:2px}
         .action-btns{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:0 20px 20px}
-        .btn{background:rgba(236,72,153,0.06);border:1px solid var(--border);padding:10px 20px;border-radius:25px;color:#fff;cursor:pointer;font-size:13px;transition:all 0.3s;display:flex;align-items:center;gap:6px;backdrop-filter:blur(10px)}
-        .btn:hover{background:rgba(236,72,153,0.15);border-color:var(--accent);box-shadow:0 0 20px rgba(236,72,153,0.2)}
-        .btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent2));border:none;font-weight:700;color:#fff;box-shadow:0 8px 25px rgba(236,72,153,0.4)}
-        .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 35px rgba(236,72,153,0.6)}
-        .btn-follow{background:linear-gradient(135deg,#ef4444,#dc2626);border:none;font-weight:700}
-        .btn-follow.following{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff}
+        .btn{background:rgba(244,114,182,0.08);border:1px solid var(--border);padding:10px 20px;border-radius:25px;color:#831843;cursor:pointer;font-size:13px;transition:all 0.3s;display:flex;align-items:center;gap:6px;backdrop-filter:blur(10px)}
+        .btn:hover{background:rgba(244,114,182,0.2);border-color:var(--accent);box-shadow:0 0 20px rgba(244,114,182,0.3)}
+        .btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent2));border:none;font-weight:700;color:#fff;box-shadow:0 8px 25px rgba(244,114,182,0.5)}
+        .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 35px rgba(236,72,153,0.7)}
+        .btn-follow{background:linear-gradient(135deg,#f472b6,#ec4899);border:none;font-weight:700;color:#fff}
+        .btn-follow.following{background:linear-gradient(135deg,#f9a8d4,#f472b6);color:#fff}
         .section-title{font-size:16px;font-weight:700;padding:0 20px;margin-bottom:12px;display:flex;align-items:center;gap:8px}
         .videos-compact{padding:0 8px 80px}
-        .video-compact-item{display:flex;gap:10px;margin-bottom:8px;background:rgba(236,72,153,0.03);border:1px solid rgba(236,72,153,0.08);border-radius:16px;padding:8px;cursor:pointer;transition:all 0.3s;backdrop-filter:blur(10px)}
-        .video-compact-item:hover{background:rgba(236,72,153,0.06);border-color:var(--accent);box-shadow:0 0 20px rgba(236,72,153,0.1)}
+        .video-compact-item{display:flex;gap:10px;margin-bottom:8px;background:rgba(244,114,182,0.04);border:1px solid rgba(244,114,182,0.1);border-radius:16px;padding:8px;cursor:pointer;transition:all 0.3s;backdrop-filter:blur(10px)}
+        .video-compact-item:hover{background:rgba(244,114,182,0.08);border-color:var(--accent);box-shadow:0 0 20px rgba(244,114,182,0.15)}
         .video-compact-thumb{width:120px;aspect-ratio:9/16;border-radius:10px;overflow:hidden;position:relative;flex-shrink:0;background:#000}
         .video-compact-thumb video{width:100%;height:100%;object-fit:cover}
         .video-compact-thumb .play-icon{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;text-shadow:0 2px 10px rgba(0,0,0,0.5);z-index:1}
@@ -1487,31 +1259,31 @@ def build_profile():
         .video-compact-info .vci-caption{font-size:13px;line-height:1.5;margin-bottom:4px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
         .video-compact-info .vci-meta{font-size:11px;opacity:0.5;display:flex;gap:12px;align-items:center}
         .video-compact-info .vci-meta span{display:flex;align-items:center;gap:3px}
-        .badge-verified{background:linear-gradient(135deg, #ec4899, #a855f7);color:#fff;font-size:12px;padding:3px 6px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;font-weight:bold;box-shadow:0 0 15px rgba(244,114,182,0.6);animation:verifyGlow 2s ease-in-out infinite}
-        @keyframes verifyGlow{0%,100%{box-shadow:0 0 15px rgba(244,114,182,0.6)}50%{box-shadow:0 0 25px rgba(244,114,182,0.9)}}
-        .edit-panel{position:fixed;bottom:0;left:0;right:0;background:rgba(10,5,8,0.98);backdrop-filter:blur(40px);border-top:2px solid var(--accent);border-radius:24px 24px 0 0;padding:24px 20px 40px;z-index:200;transform:translateY(100%);transition:transform 0.4s cubic-bezier(0.4,0,0.2,1);max-height:80vh;overflow-y:auto;box-shadow:0 -10px 40px rgba(236,72,153,0.1)}
+        .badge-verified{background:linear-gradient(135deg, #f472b6, #ec4899);color:#fff;font-size:12px;padding:3px 6px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;font-weight:bold;box-shadow:0 0 15px rgba(244,114,182,0.7);animation:verifyGlow 2s ease-in-out infinite}
+        @keyframes verifyGlow{0%,100%{box-shadow:0 0 15px rgba(244,114,182,0.7)}50%{box-shadow:0 0 25px rgba(244,114,182,0.95)}}
+        .edit-panel{position:fixed;bottom:0;left:0;right:0;background:rgba(253,242,248,0.99);backdrop-filter:blur(40px);border-top:2px solid var(--accent);border-radius:24px 24px 0 0;padding:24px 20px 40px;z-index:200;transform:translateY(100%);transition:transform 0.4s cubic-bezier(0.4,0,0.2,1);max-height:80vh;overflow-y:auto;box-shadow:0 -10px 40px rgba(244,114,182,0.15)}
         .edit-panel.show{transform:translateY(0)}
         .edit-panel h3{font-size:18px;font-weight:700;margin-bottom:20px;color:var(--accent2);text-align:center}
         .edit-panel label{display:block;font-size:12px;opacity:0.7;margin-bottom:6px;margin-top:14px}
-        .edit-panel input,.edit-panel textarea{width:100%;padding:12px 16px;border-radius:14px;background:var(--card);border:1px solid var(--border);color:#fff;font-size:14px;outline:none;resize:none;font-family:'Segoe UI',sans-serif;transition:border 0.3s}
-        .edit-panel input:focus,.edit-panel textarea:focus{border-color:var(--accent);box-shadow:0 0 15px rgba(236,72,153,0.15)}
+        .edit-panel input,.edit-panel textarea{width:100%;padding:12px 16px;border-radius:14px;background:var(--card);border:1px solid var(--border);color:#831843;font-size:14px;outline:none;resize:none;font-family:'Segoe UI',sans-serif;transition:border 0.3s}
+        .edit-panel input:focus,.edit-panel textarea:focus{border-color:var(--accent);box-shadow:0 0 15px rgba(244,114,182,0.2)}
         .edit-panel textarea{min-height:80px}
         .edit-actions{display:flex;gap:10px;margin-top:20px}
         .edit-actions button{flex:1;padding:12px;border-radius:25px;font-weight:700;cursor:pointer;font-size:14px;transition:all 0.3s}
         .btn-save{background:linear-gradient(135deg,var(--accent),var(--accent2));border:none;color:#fff}
-        .btn-cancel{background:var(--card);border:1px solid var(--border);color:#fff}
-        .btn-save:hover{box-shadow:0 8px 25px rgba(236,72,153,0.5);transform:translateY(-2px)}
-        .overlay-panel{position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:150;display:none}
+        .btn-cancel{background:var(--card);border:1px solid var(--border);color:#831843}
+        .btn-save:hover{box-shadow:0 8px 25px rgba(244,114,182,0.6);transform:translateY(-2px)}
+        .overlay-panel{position:fixed;inset:0;background:rgba(0,0,0,0.3);z-index:150;display:none}
         .overlay-panel.show{display:block}
-        .spinner{width:36px;height:36px;border:3px solid rgba(236,72,153,0.2);border-top-color:var(--accent);border-radius:50%;animation:spin 0.7s linear infinite;margin:30px auto}
+        .spinner{width:36px;height:36px;border:3px solid rgba(244,114,182,0.2);border-top-color:var(--accent);border-radius:50%;animation:spin 0.7s linear infinite;margin:30px auto}
         @keyframes spin{to{transform:rotate(360deg)}}
-        .load-center{display:flex;align-items:center;justify-content:center;min-height:80vh;flex-direction:column;gap:12px;color:rgba(255,255,255,0.5)}
+        .load-center{display:flex;align-items:center;justify-content:center;min-height:80vh;flex-direction:column;gap:12px;color:rgba(190,24,93,0.5)}
         .empty-state{text-align:center;opacity:0.5;padding:40px 20px}
         .empty-state i{font-size:48px;color:var(--accent);margin-bottom:12px;display:block}
-        .toast-msg{position:fixed;bottom:100px;left:50%;transform:translateX(-50%);background:rgba(10,5,8,0.95);padding:12px 24px;border-radius:30px;z-index:300;border:1px solid rgba(236,72,153,0.3);font-size:13px;opacity:0;transition:opacity 0.3s;pointer-events:none;white-space:nowrap;box-shadow:0 8px 32px rgba(0,0,0,0.4)}
+        .toast-msg{position:fixed;bottom:100px;left:50%;transform:translateX(-50%);background:rgba(255,255,255,0.95);padding:12px 24px;border-radius:30px;z-index:300;border:2px solid rgba(244,114,182,0.4);font-size:13px;color:#831843;opacity:0;transition:opacity 0.3s;pointer-events:none;white-space:nowrap;box-shadow:0 8px 32px rgba(0,0,0,0.1)}
         .toast-msg.show{opacity:1}
 
-        /* 💖 PLAYER & LIGHTBOX (Reused from index) */
+        /* 🌷 PLAYER & LIGHTBOX */
         .fullscreen-player {
             position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
             background: #000; z-index: 9999; display: flex; align-items: center;
@@ -1523,56 +1295,56 @@ def build_profile():
         .player-controls {
             position: absolute; bottom: 100px; left: 20px; right: 20px;
             display: flex; align-items: center; justify-content: space-between;
-            background: rgba(0,0,0,0.6); backdrop-filter: blur(20px);
+            background: rgba(255,255,255,0.9); backdrop-filter: blur(20px);
             border-radius: 50px; padding: 10px 20px;
-            border: 1px solid rgba(236,72,153,0.3); z-index: 10000; color: #fff; gap: 12px; flex-wrap: wrap;
+            border: 2px solid rgba(244,114,182,0.4); z-index: 10000; color: #831843; gap: 12px; flex-wrap: wrap;
         }
-        .player-controls button { background: none; border: none; color: #fff; font-size: 20px; cursor: pointer; transition: color 0.2s; padding: 5px; }
-        .player-controls button:hover { color: #f472b6; }
+        .player-controls button { background: none; border: none; color: #831843; font-size: 20px; cursor: pointer; transition: color 0.2s; padding: 5px; }
+        .player-controls button:hover { color: #ec4899; }
         .progress-wrap { flex: 1; display: flex; align-items: center; gap: 8px; min-width: 100px; }
-        .progress-bar { flex: 1; height: 4px; background: rgba(255,255,255,0.2); border-radius: 4px; cursor: pointer; position: relative; }
-        .progress-fill { height: 100%; background: linear-gradient(90deg, #ec4899, #a855f7); border-radius: 4px; width: 0%; }
+        .progress-bar { flex: 1; height: 4px; background: rgba(244,114,182,0.2); border-radius: 4px; cursor: pointer; position: relative; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, #f472b6, #ec4899); border-radius: 4px; width: 0%; }
         .close-player {
             position: absolute; top: 20px; left: 20px;
-            background: rgba(0,0,0,0.5); backdrop-filter: blur(10px);
-            border: 1px solid rgba(236,72,153,0.4); color: #fff;
+            background: rgba(255,255,255,0.8); backdrop-filter: blur(10px);
+            border: 2px solid rgba(244,114,182,0.5); color: #831843;
             width: 44px; height: 44px; border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
             cursor: pointer; font-size: 20px; z-index: 10001; transition: all 0.3s;
         }
-        .close-player:hover { background: rgba(236,72,153,0.3); box-shadow: 0 0 20px rgba(236,72,153,0.5); }
+        .close-player:hover { background: rgba(244,114,182,0.4); box-shadow: 0 0 20px rgba(244,114,182,0.6); }
 
         /* ADMIN */
         .admin-panel{background:transparent;border:none;padding:0 8px;margin:0 8px 100px 8px;font-family:'Segoe UI',sans-serif}
-        .admin-panel h3{color:#f472b6;font-size:20px;margin-bottom:20px;display:flex;align-items:center;gap:10px;font-weight:700}
+        .admin-panel h3{color:#ec4899;font-size:20px;margin-bottom:20px;display:flex;align-items:center;gap:10px;font-weight:700}
         .admin-stats-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:24px}
-        .stat-card{background:rgba(236,72,153,0.06);border:1px solid rgba(236,72,153,0.15);border-radius:16px;padding:16px;display:flex;align-items:center;gap:14px;backdrop-filter:blur(10px)}
-        .stat-icon{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-size:20px;box-shadow:0 4px 15px rgba(236,72,153,0.3)}
-        .stat-info h4{font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:4px;font-weight:500}
+        .stat-card{background:rgba(244,114,182,0.08);border:1px solid rgba(244,114,182,0.2);border-radius:16px;padding:16px;display:flex;align-items:center;gap:14px;backdrop-filter:blur(10px)}
+        .stat-icon{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-size:20px;box-shadow:0 4px 15px rgba(244,114,182,0.4)}
+        .stat-info h4{font-size:12px;color:rgba(131,24,67,0.5);margin-bottom:4px;font-weight:500}
         .stat-info span{font-size:22px;font-weight:800}
-        .admin-user-list-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;color:rgba(255,255,255,0.6);font-size:13px;font-weight:600;border-bottom:1px solid rgba(236,72,153,0.1);padding-bottom:8px}
+        .admin-user-list-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;color:rgba(131,24,67,0.6);font-size:13px;font-weight:600;border-bottom:1px solid rgba(244,114,182,0.1);padding-bottom:8px}
         .admin-user-item{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.03);transition:background 0.2s;border-radius:8px;padding:8px}
-        .admin-user-item:hover{background:rgba(236,72,153,0.04)}
+        .admin-user-item:hover{background:rgba(244,114,182,0.06)}
         .admin-user-info{display:flex;align-items:center;gap:12px}
-        .admin-avatar{width:40px;height:40px;border-radius:50%;background:#333;overflow:hidden;border:2px solid rgba(236,72,153,0.3)}
+        .admin-avatar{width:40px;height:40px;border-radius:50%;background:#fce7f3;overflow:hidden;border:2px solid rgba(244,114,182,0.4)}
         .admin-avatar img{width:100%;height:100%;object-fit:cover}
         .admin-user-details h4{font-weight:600;font-size:15px;display:flex;align-items:center;gap:5px}
-        .admin-user-details p{font-size:11px;color:rgba(255,255,255,0.4);margin-top:2px}
+        .admin-user-details p{font-size:11px;color:rgba(131,24,67,0.4);margin-top:2px}
         .admin-user-actions{display:flex;gap:8px;align-items:center}
         .admin-btn{border:none;border-radius:20px;padding:8px 16px;font-size:12px;font-weight:700;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;gap:5px}
         .admin-btn:active{transform:scale(0.95)}
-        .btn-ban{background:rgba(255,255,255,0.1);color:#fff;border:1px solid rgba(255,255,255,0.1)}
+        .btn-ban{background:rgba(131,24,67,0.1);color:#831843;border:1px solid rgba(131,24,67,0.1)}
         .btn-ban:hover{background:rgba(239,68,68,0.2)}
         .btn-unban{background:rgba(34,197,94,0.1);color:#4ade80;border:1px solid rgba(34,197,94,0.2)}
         .btn-unban:hover{background:rgba(34,197,94,0.2)}
-        .btn-verify{background:linear-gradient(135deg, #ec4899, #a855f7);color:#fff;box-shadow:0 4px 12px rgba(236,72,153,0.3)}
-        .btn-verify:hover{box-shadow:0 6px 18px rgba(236,72,153,0.5);transform:translateY(-1px)}
-        .btn-verify.unverify{background:rgba(255,255,255,0.1);color:#fff;box-shadow:none}
+        .btn-verify{background:linear-gradient(135deg, #f472b6, #ec4899);color:#fff;box-shadow:0 4px 12px rgba(244,114,182,0.4)}
+        .btn-verify:hover{box-shadow:0 6px 18px rgba(236,72,153,0.6);transform:translateY(-1px)}
+        .btn-verify.unverify{background:rgba(131,24,67,0.1);color:#831843;box-shadow:none}
         .btn-verify.unverify:hover{background:rgba(239,68,68,0.2);color:#f87171}
         .btn-delete-video{background:rgba(239,68,68,0.1);color:#f87171;border:1px solid rgba(239,68,68,0.2)}
         .btn-delete-video:hover{background:rgba(239,68,68,0.3);box-shadow:0 0 15px rgba(239,68,68,0.3)}
         .admin-video-item{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.03);transition:background 0.2s;border-radius:8px;padding:8px}
-        .admin-video-item:hover{background:rgba(236,72,153,0.04)}
+        .admin-video-item:hover{background:rgba(244,114,182,0.06)}
         .admin-video-info{display:flex;align-items:center;gap:12px;flex:1;min-width:0}
         .admin-video-thumb{width:50px;height:70px;border-radius:8px;overflow:hidden;background:#000;flex-shrink:0}
         .admin-video-thumb img{width:100%;height:100%;object-fit:cover}
@@ -1598,11 +1370,11 @@ def build_profile():
             <span id="duration">0:00</span>
         </div>
         <button onclick="toggleMutePlayer()"><i class="fas fa-volume-up" id="muteIcon"></i></button>
-        <a id="downloadLink" href="#" download style="color:#f472b6;text-decoration:none;margin-left:10px;"><i class="fas fa-download"></i></a>
+        <a id="downloadLink" href="#" download style="color:#ec4899;text-decoration:none;margin-left:10px;"><i class="fas fa-download"></i></a>
     </div>
 </div>
 
-<div class="load-center" id="loader"><div class="spinner"></div><span>💖 تحميل الملف...</span></div>
+<div class="load-center" id="loader"><div class="spinner"></div><span>🌷 تحميل الملف...</span></div>
 
 <div id="content" style="display:none">
     <div class="cover-section" id="coverSection" onmousemove="parallaxCover(event)">
@@ -1649,7 +1421,7 @@ def build_profile():
 
 <div class="overlay-panel" id="overlayPanel" onclick="closeEditPanel()"></div>
 <div class="edit-panel" id="editPanel">
-    <h3>💖 لوحة تعديل الملف الشخصي</h3>
+    <h3>🌷 لوحة تعديل الملف الشخصي</h3>
     <label>👤 اسم المستخدم</label>
     <input type="text" id="editUsername" placeholder="اسم المستخدم">
     <label>📝 السيرة الذاتية</label>
@@ -1795,7 +1567,7 @@ def build_profile():
                     <div class="video-compact-info">
                         <div class="vci-caption">${caption}</div>
                         <div class="vci-meta">
-                            <span><i class="fas fa-heart" style="color:var(--accent)"></i> ${likes}</span>
+                            <span>🌷 ${likes}</span>
                             <span><i class="fas fa-comment"></i> ${commentsCount}</span>
                             <span><i class="fas fa-music"></i> ${music}</span>
                         </div>
@@ -1821,11 +1593,11 @@ def build_profile():
         document.getElementById('editContactEmail').value = u.contactEmail || '';
         _selectedCover = u.coverColor || COVER_COLORS[0];
         const colorsDiv = document.getElementById('coverColors');
-        colorsDiv.innerHTML = COVER_COLORS.map((c, i) => `<div onclick="selectCover('${c.replace(/'/g, "\\'")}', this)" style="width:40px;height:40px;border-radius:50%;background:${c};cursor:pointer;border:3px solid ${_selectedCover === c ? '#fff' : 'transparent'};transition:all 0.2s;box-shadow:0 4px 15px rgba(0,0,0,0.3)" title="غلاف ${i+1}"></div>`).join('');
+        colorsDiv.innerHTML = COVER_COLORS.map((c, i) => `<div onclick="selectCover('${c.replace(/'/g, "\\'")}', this)" style="width:40px;height:40px;border-radius:50%;background:${c};cursor:pointer;border:3px solid ${_selectedCover === c ? '#831843' : 'transparent'};transition:all 0.2s;box-shadow:0 4px 15px rgba(0,0,0,0.1)" title="غلاف ${i+1}"></div>`).join('');
         document.getElementById('editPanel').classList.add('show'); document.getElementById('overlayPanel').classList.add('show');
     }
     function closeEditPanel() { document.getElementById('editPanel').classList.remove('show'); document.getElementById('overlayPanel').classList.remove('show'); }
-    function selectCover(color, el) { _selectedCover = color; document.getElementById('coverSection').style.background = color; document.getElementById('coverImg').style.display = 'none'; document.querySelectorAll('#coverColors div').forEach(d => d.style.borderColor = 'transparent'); el.style.borderColor = '#fff'; }
+    function selectCover(color, el) { _selectedCover = color; document.getElementById('coverSection').style.background = color; document.getElementById('coverImg').style.display = 'none'; document.querySelectorAll('#coverColors div').forEach(d => d.style.borderColor = 'transparent'); el.style.borderColor = '#831843'; }
     async function saveProfile() {
         const username = document.getElementById('editUsername').value.trim();
         const bio = document.getElementById('editBio').value.trim();
@@ -1866,7 +1638,7 @@ def build_profile():
     }
     async function copyProfile() {
         const u = allUsers[profileUserId];
-        const text = `👤 @${u.username || 'مستخدم'}\\n📝 ${u.bio || ''}\\n💖 MNAENCA 2026`;
+        const text = `👤 @${u.username || 'مستخدم'}\\n📝 ${u.bio || ''}\\n🌷 ZHARE 2026`;
         try { await navigator.clipboard.writeText(text); } catch(e) { const ta = document.createElement('textarea'); ta.value = text; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta); }
         showToast('✅ تم نسخ معلومات الملف الشخصي');
     }
@@ -1894,8 +1666,8 @@ def build_profile():
             <div class="admin-stats-grid">
                 <div class="stat-card"><div class="stat-icon"><i class="fas fa-users"></i></div><div class="stat-info"><h4>المستخدمين</h4><span>${totalUsers}</span></div></div>
                 <div class="stat-card"><div class="stat-icon" style="background: linear-gradient(135deg, #22c55e, #16a34a);"><i class="fas fa-wifi"></i></div><div class="stat-info"><h4>متصلين</h4><span>${totalOnline}</span></div></div>
-                <div class="stat-card"><div class="stat-icon" style="background: linear-gradient(135deg, #f59e0b, #ec4899);"><i class="fas fa-video"></i></div><div class="stat-info"><h4>فيديوهات</h4><span>${totalVideos}</span></div></div>
-                <div class="stat-card"><div class="stat-icon" style="background: linear-gradient(135deg, #f472b6, #a855f7);"><i class="fas fa-check-circle"></i></div><div class="stat-info"><h4>موثقين</h4><span>${totalVerified}</span></div></div>
+                <div class="stat-card"><div class="stat-icon" style="background: linear-gradient(135deg, #f59e0b, #f472b6);"><i class="fas fa-video"></i></div><div class="stat-info"><h4>فيديوهات</h4><span>${totalVideos}</span></div></div>
+                <div class="stat-card"><div class="stat-icon" style="background: linear-gradient(135deg, #f9a8d4, #ec4899);"><i class="fas fa-check-circle"></i></div><div class="stat-info"><h4>موثقين</h4><span>${totalVerified}</span></div></div>
                 <div class="stat-card" style="grid-column: span 2;"><div class="stat-icon" style="background: linear-gradient(135deg, #ef4444, #dc2626);"><i class="fas fa-ban"></i></div><div class="stat-info"><h4>محظورين</h4><span>${totalBanned}</span></div></div>
             </div>
             <div class="admin-user-list-header"><span>📋 قائمة المستخدمين (أحدث 15)</span><span style="font-size: 11px;">${totalUsers} إجمالي</span></div>
@@ -1930,7 +1702,7 @@ def build_profile():
         listContainer.innerHTML = videosArray.map(v => {
             const user = allUsers[v.sender] || { username: v.senderName || 'مستخدم' };
             const desc = (v.description || 'بدون وصف').substring(0, 40);
-            return `<div class="admin-video-item"><div class="admin-video-info"><div class="admin-video-thumb">${v.thumbnail ? `<img src="${v.thumbnail}">` : ''}</div><div class="admin-video-details"><p>${desc}</p><span>@${user.username} · ❤️ ${v.likes || 0}</span></div></div><div class="admin-user-actions"><button class="admin-btn btn-delete-video" onclick="deleteVideo('${v.id}')"><i class="fas fa-trash"></i> حذف</button></div></div>`;
+            return `<div class="admin-video-item"><div class="admin-video-info"><div class="admin-video-thumb">${v.thumbnail ? `<img src="${v.thumbnail}">` : ''}</div><div class="admin-video-details"><p>${desc}</p><span>@${user.username} · 🌷 ${v.likes || 0}</span></div></div><div class="admin-user-actions"><button class="admin-btn btn-delete-video" onclick="deleteVideo('${v.id}')"><i class="fas fa-trash"></i> حذف</button></div></div>`;
         }).join('');
     }
 
@@ -1939,13 +1711,13 @@ def build_profile():
     window.toggleBanUser = async function(id) { const snap = await db.ref('users/' + id).once('value'); const data = snap.val(); if (!data) return; const newState = !data.banned; if (!confirm(`تأكيد ${newState ? 'حظر' : 'إلغاء حظر'} @${data.username || 'المستخدم'}؟`)) return; await db.ref('users/' + id).update({ banned: newState, bannedAt: newState ? Date.now() : null, bannedBy: newState ? currentUser.uid : null }); await loadAll(); await loadProfile(); showToast(`✅ تم ${newState ? 'حظر' : 'إلغاء حظر'} المستخدم`); loadAdminUsersList(); };
     window.openUserProfile = function(id) { if (id === currentUser?.uid) { window.location.href = 'profile.html'; } else { window.location.href = 'profile.html?uid=' + id; } };
 
-    console.log('💖 MNAENCA Profile Ready ✨');
+    console.log('🌷 ZHARE Profile Ready ✨');
 </script>
 </body>
 </html>"""
 
 # ═══════════════════════════════════════════════════════════
-# 💖 5-9. الملفات المتبقية
+# 🌷 5. upload.html
 # ═══════════════════════════════════════════════════════════
 
 def build_upload():
@@ -1954,30 +1726,30 @@ def build_upload():
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>💖 MNAENCA | رفع فيديو</title>
+    <title>🌷 ZHARE | رفع فيديو</title>
     <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-database-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-auth-compat.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
-        :root{--glass:rgba(236,72,153,0.03);--border:rgba(236,72,153,0.12);--accent:#ec4899;--accent2:#a855f7;--bg:#0a0508}
+        :root{--glass:rgba(244,114,182,0.06);--border:rgba(244,114,182,0.2);--accent:#f472b6;--accent2:#ec4899;--bg:#fdf2f8}
         *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:#fff;min-height:100vh;overflow-y:auto}
-        .header{display:flex;align-items:center;gap:12px;padding:16px;border-bottom:1px solid var(--border);background:rgba(10,5,8,0.8);backdrop-filter:blur(20px);position:sticky;top:0;z-index:10}
-        .btn-back{background:rgba(236,72,153,0.1);border:1px solid var(--border);width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;cursor:pointer;font-size:16px}
+        body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:#831843;min-height:100vh;overflow-y:auto}
+        .header{display:flex;align-items:center;gap:12px;padding:16px;border-bottom:1px solid var(--border);background:rgba(255,255,255,0.8);backdrop-filter:blur(20px);position:sticky;top:0;z-index:10}
+        .btn-back{background:rgba(244,114,182,0.15);border:1px solid var(--border);width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#831843;cursor:pointer;font-size:16px}
         .container{max-width:500px;margin:0 auto;padding:20px}
-        .dropzone{border:2px dashed rgba(236,72,153,0.3);border-radius:20px;padding:50px 20px;text-align:center;cursor:pointer;background:var(--glass);margin-bottom:20px}
+        .dropzone{border:2px dashed rgba(244,114,182,0.4);border-radius:20px;padding:50px 20px;text-align:center;cursor:pointer;background:var(--glass);margin-bottom:20px}
         .dropzone i{font-size:48px;color:var(--accent)}
         .dropzone video{width:100%;max-height:250px;object-fit:contain;margin-top:12px;border-radius:12px;display:none}
-        .form-card{background:rgba(236,72,153,0.03);border:1px solid var(--border);border-radius:20px;padding:20px}
+        .form-card{background:rgba(244,114,182,0.04);border:1px solid var(--border);border-radius:20px;padding:20px}
         .form-card label{display:block;font-size:13px;opacity:0.7;margin-bottom:6px;margin-top:12px}
-        .form-card textarea,.form-card input{width:100%;padding:14px 16px;border-radius:16px;background:rgba(236,72,153,0.04);border:1px solid var(--border);color:#fff;font-size:14px;outline:none;resize:none;font-family:'Segoe UI',sans-serif}
+        .form-card textarea,.form-card input{width:100%;padding:14px 16px;border-radius:16px;background:rgba(244,114,182,0.06);border:1px solid var(--border);color:#831843;font-size:14px;outline:none;resize:none;font-family:'Segoe UI',sans-serif}
         .form-card textarea{min-height:80px}
         .progress-wrap{display:none;margin:16px 0}
-        .progress-bar{background:rgba(255,255,255,0.1);border-radius:30px;height:6px;overflow:hidden}
+        .progress-bar{background:rgba(244,114,182,0.1);border-radius:30px;height:6px;overflow:hidden}
         .progress-fill{background:linear-gradient(90deg,var(--accent),var(--accent2));height:100%;border-radius:30px;width:0%}
         .progress-text{text-align:center;font-size:12px;margin-top:6px;color:var(--accent2)}
-        .btn-upload{width:100%;padding:14px;background:linear-gradient(135deg,var(--accent),var(--accent2));border:none;border-radius:30px;color:#fff;font-weight:700;font-size:15px;cursor:pointer;margin-top:16px;box-shadow:0 10px 25px rgba(236,72,153,0.4)}
+        .btn-upload{width:100%;padding:14px;background:linear-gradient(135deg,var(--accent),var(--accent2));border:none;border-radius:30px;color:#fff;font-weight:700;font-size:15px;cursor:pointer;margin-top:16px;box-shadow:0 10px 25px rgba(244,114,182,0.5)}
         .btn-upload:disabled{opacity:0.5}
         .status{text-align:center;margin-top:12px;font-size:13px}
     </style>
@@ -1991,7 +1763,7 @@ def build_upload():
         <label><i class="fas fa-pen"></i> وصف الفيديو</label><textarea id="vidDesc" placeholder="اكتب وصفاً... #هاشتاقات"></textarea>
         <label><i class="fas fa-music"></i> الموسيقى</label><input type="text" id="vidMusic" placeholder="Original Sound">
         <div class="progress-wrap" id="progressWrap"><div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div><div class="progress-text" id="progressText">0%</div></div>
-        <button class="btn-upload" id="uploadBtn" onclick="upload()"><i class="fas fa-heart"></i> رفع الفيديو</button>
+        <button class="btn-upload" id="uploadBtn" onclick="upload()">🌷 رفع الفيديو</button>
         <div class="status" id="status"></div>
     </div>
 </div>
@@ -2008,12 +1780,16 @@ def build_upload():
         const fd=new FormData();fd.append('file',selectedFile);fd.append('upload_preset',UPLOAD_PRESET);
         const xhr=new XMLHttpRequest();xhr.open('POST','https://api.cloudinary.com/v1_1/'+CLOUD_NAME+'/video/upload');
         xhr.upload.onprogress=e=>{if(e.lengthComputable){const p=Math.round(e.loaded/e.total*100);pf.style.width=p+'%';pt.innerText=p+'%'}};
-        xhr.onload=async()=>{const r=JSON.parse(xhr.responseText);await db.ref('videos/').push({url:r.secure_url,thumbnail:r.secure_url.replace('.mp4','.jpg'),description:desc,music:music,sender:currentUser.uid,senderName:currentUserData?.username,likes:0,likedBy:{},comments:{},timestamp:Date.now()});st.innerHTML='✅ تم الرفع بنجاح!';st.style.color='#4ade80';setTimeout(()=>window.location.href='index.html',1500)};
+        xhr.onload=async()=>{const r=JSON.parse(xhr.responseText);await db.ref('videos/').push({url:r.secure_url,thumbnail:r.secure_url.replace('.mp4','.jpg'),description:desc,music:music,sender:currentUser.uid,senderName:currentUserData?.username,likes:0,likedBy:{},comments:{},timestamp:Date.now()});st.innerHTML='✅ تم الرفع بنجاح!';st.style.color='#059669';setTimeout(()=>window.location.href='index.html',1500)};
         xhr.onerror=()=>{st.innerHTML='❌ فشل الرفع';btn.disabled=false};xhr.send(fd);
     }
 </script>
 </body>
 </html>"""
+
+# ═══════════════════════════════════════════════════════════
+# 🌷 6. chat.html
+# ═══════════════════════════════════════════════════════════
 
 def build_chat():
     return """<!DOCTYPE html>
@@ -2021,51 +1797,49 @@ def build_chat():
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>💖 MNAENCA | دردشة</title>
+    <title>🌷 ZHARE | دردشة</title>
     <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-database-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-auth-compat.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
-        :root{--glass:rgba(236,72,153,0.03);--border:rgba(236,72,153,0.12);--accent:#ec4899;--accent2:#a855f7;--bg:#0a0508}
+        :root{--glass:rgba(244,114,182,0.06);--border:rgba(244,114,182,0.2);--accent:#f472b6;--accent2:#ec4899;--bg:#fdf2f8}
         *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:#fff;height:100vh;display:flex;flex-direction:column}
-        .header{display:flex;align-items:center;gap:12px;padding:16px;border-bottom:1px solid var(--border);background:rgba(10,5,8,0.8);backdrop-filter:blur(20px)}
-        .btn-back{background:rgba(236,72,153,0.1);border:1px solid var(--border);width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;cursor:pointer;font-size:16px}
+        body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:#831843;height:100vh;display:flex;flex-direction:column}
+        .header{display:flex;align-items:center;gap:12px;padding:16px;border-bottom:1px solid var(--border);background:rgba(255,255,255,0.8);backdrop-filter:blur(20px)}
+        .btn-back{background:rgba(244,114,182,0.15);border:1px solid var(--border);width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#831843;cursor:pointer;font-size:16px}
         .msgs{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:8px}
         .bubble{max-width:80%;padding:10px 16px;border-radius:20px;word-break:break-word;font-size:14px;position:relative;animation:msgIn 0.3s ease}
         @keyframes msgIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
         .bubble.sent{background:linear-gradient(135deg,var(--accent),var(--accent2));align-self:flex-end;color:#fff}
-        .bubble.received{background:rgba(236,72,153,0.06);align-self:flex-start;border:1px solid rgba(236,72,153,0.1)}
+        .bubble.received{background:rgba(244,114,182,0.1);align-self:flex-start;border:1px solid rgba(244,114,182,0.15)}
         .bubble img{max-width:200px;border-radius:12px;cursor:pointer;margin-top:4px}
         .bubble .time{font-size:9px;opacity:0.6;margin-top:4px}
-        .input-bar{display:flex;gap:10px;padding:12px;background:rgba(10,5,8,0.95);backdrop-filter:blur(20px);border-top:1px solid var(--border);align-items:center}
-        .input-bar input{flex:1;padding:12px 16px;border-radius:30px;background:var(--glass);border:1px solid var(--border);color:#fff;font-size:14px;outline:none}
-        .btn-icon{width:42px;height:42px;background:rgba(236,72,153,0.1);border:1px solid var(--border);border-radius:50%;color:#fff;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center}
+        .input-bar{display:flex;gap:10px;padding:12px;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);border-top:1px solid var(--border);align-items:center}
+        .input-bar input{flex:1;padding:12px 16px;border-radius:30px;background:var(--glass);border:1px solid var(--border);color:#831843;font-size:14px;outline:none}
+        .btn-icon{width:42px;height:42px;background:rgba(244,114,182,0.15);border:1px solid var(--border);border-radius:50%;color:#831843;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center}
         .btn-send{width:42px;height:42px;background:linear-gradient(135deg,var(--accent),var(--accent2));border:none;border-radius:50%;color:#fff;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center}
         .conv-item{display:flex;align-items:center;gap:12px;padding:14px;border-bottom:1px solid var(--border);cursor:pointer}
-        .conv-item:hover{background:rgba(236,72,153,0.04)}
-        .chat-avatar{width:40px;height:40px;border-radius:50%;overflow:hidden;border:2px solid rgba(236,72,153,0.3)}
+        .conv-item:hover{background:rgba(244,114,182,0.06)}
+        .chat-avatar{width:40px;height:40px;border-radius:50%;overflow:hidden;border:2px solid rgba(244,114,182,0.4)}
         .chat-avatar img{width:100%;height:100%;object-fit:cover}
         .online-indicator{width:10px;height:10px;background:#22c55e;border-radius:50%;display:inline-block;margin-left:6px}
-        .spinner{width:32px;height:32px;border:3px solid rgba(236,72,153,0.2);border-top-color:var(--accent);border-radius:50%;animation:spin 0.7s linear infinite;margin:30px auto}
+        .spinner{width:32px;height:32px;border:3px solid rgba(244,114,182,0.2);border-top-color:var(--accent);border-radius:50%;animation:spin 0.7s linear infinite;margin:30px auto}
         @keyframes spin{to{transform:rotate(360deg)}}
-        .toast-msg{position:fixed;bottom:100px;left:50%;transform:translateX(-50%);background:rgba(10,5,8,0.95);padding:10px 22px;border-radius:30px;z-index:300;border:1px solid rgba(236,72,153,0.3);font-size:13px;opacity:0;transition:opacity 0.3s;pointer-events:none}
+        .toast-msg{position:fixed;bottom:100px;left:50%;transform:translateX(-50%);background:rgba(255,255,255,0.95);padding:10px 22px;border-radius:30px;z-index:300;border:1px solid rgba(244,114,182,0.3);font-size:13px;color:#831843;opacity:0;transition:opacity 0.3s;pointer-events:none}
         .toast-msg.show{opacity:1}
-
-        /* 💖 Image Lightbox (In-App) */
         .image-lightbox {
             position: fixed; inset: 0;
-            background: rgba(0,0,0,0.96); backdrop-filter: blur(30px);
+            background: rgba(253,242,248,0.98); backdrop-filter: blur(30px);
             z-index: 9999; display: flex; align-items: center; justify-content: center;
             opacity: 0; pointer-events: none; transition: opacity 0.3s ease; flex-direction: column;
         }
         .image-lightbox.active { opacity: 1; pointer-events: auto; }
-        .image-lightbox img { max-width: 95vw; max-height: 80vh; border-radius: 16px; object-fit: contain; box-shadow: 0 20px 60px rgba(236,72,153,0.2); border: 1px solid rgba(236,72,153,0.15); }
+        .image-lightbox img { max-width: 95vw; max-height: 80vh; border-radius: 16px; object-fit: contain; box-shadow: 0 20px 60px rgba(244,114,182,0.3); border: 2px solid rgba(244,114,182,0.2); }
         .lightbox-actions { display: flex; gap: 20px; margin-top: 20px; z-index: 10000; }
-        .lightbox-actions button { background: rgba(236,72,153,0.15); border: 1px solid rgba(236,72,153,0.3); color: #fff; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 18px; transition: all 0.3s; }
-        .lightbox-actions button:hover { background: rgba(236,72,153,0.4); box-shadow: 0 0 25px rgba(236,72,153,0.4); }
-        .close-lightbox { position: absolute; top: 20px; left: 20px; background: rgba(0,0,0,0.5); backdrop-filter: blur(10px); border: 1px solid rgba(236,72,153,0.4); color: #fff; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 20px; z-index: 10001; }
+        .lightbox-actions button { background: rgba(244,114,182,0.2); border: 2px solid rgba(244,114,182,0.4); color: #831843; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 18px; transition: all 0.3s; }
+        .lightbox-actions button:hover { background: rgba(244,114,182,0.5); box-shadow: 0 0 25px rgba(244,114,182,0.5); }
+        .close-lightbox { position: absolute; top: 20px; left: 20px; background: rgba(255,255,255,0.8); backdrop-filter: blur(10px); border: 2px solid rgba(244,114,182,0.5); color: #831843; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 20px; z-index: 10001; }
     </style>
 </head>
 <body>
@@ -2078,7 +1852,7 @@ def build_chat():
     </div>
 </div>
 
-<div id="loader" style="flex:1;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px"><div class="spinner"></div><span>💖 تحميل...</span></div>
+<div id="loader" style="flex:1;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px"><div class="spinner"></div><span>🌷 تحميل...</span></div>
 <div id="convView" style="display:none;flex:1;flex-direction:column;overflow:hidden"><div class="header"><button class="btn-back" onclick="window.location.href='index.html'"><i class="fas fa-arrow-right"></i></button><h2><i class="fas fa-comments"></i> المحادثات</h2></div><div id="convList" style="flex:1;overflow-y:auto"></div></div>
 <div id="chatView" style="display:none;flex:1;flex-direction:column;overflow:hidden"><div class="header"><button class="btn-back" onclick="showConvs()"><i class="fas fa-arrow-right"></i></button><div class="chat-avatar" id="chatAvatar"></div><h3 id="chatName">محادثة</h3><span id="chatOnline" style="font-size:11px;opacity:0.5;margin-right:8px"></span></div><div class="msgs" id="msgsList"></div><div class="input-bar"><button class="btn-icon" onclick="sendImage()" title="إرسال صورة"><i class="fas fa-image"></i></button><input type="text" id="msgInput" placeholder="اكتب رسالة..." onkeydown="if(event.key==='Enter')sendMsg()"><button class="btn-send" onclick="sendMsg()"><i class="fas fa-paper-plane"></i></button><button class="btn-icon" onclick="copyChat()" title="نسخ المحادثة"><i class="fas fa-copy"></i></button></div></div>
 <div class="toast-msg" id="toastMsg">✅ تم</div>
@@ -2103,12 +1877,16 @@ def build_chat():
     async function loadMsgs(){const ml=document.getElementById('msgsList');ml.innerHTML='';if(!chatUserId)return;const snap=await db.ref('private_messages/'+getChatId()).once('value');const ms=snap.val()||{};Object.values(ms).sort((a,b)=>a.timestamp-b.timestamp).forEach(m=>{const sent=m.senderId===currentUser.uid;const d=document.createElement('div');d.className='bubble '+(sent?'sent':'received');d.innerHTML=`${m.type==='image'?`<img src="${m.imageUrl}" onclick="openLightbox('${m.imageUrl}')">`:m.text}<div class="time">${new Date(m.timestamp).toLocaleTimeString('ar-SA')}</div>`;ml.appendChild(d);});ml.scrollTop=ml.scrollHeight;}
     async function sendMsg(){const inp=document.getElementById('msgInput');const txt=inp.value.trim();if(!txt||!chatUserId)return;await db.ref('private_messages/'+getChatId()).push({senderId:currentUser.uid,text:txt,type:'text',timestamp:Date.now()});inp.value='';await loadMsgs();}
     async function sendImage(){if(!chatUserId)return;const inp=document.createElement('input');inp.type='file';inp.accept='image/*';inp.onchange=async(e)=>{const file=e.target.files[0];if(!file)return;showToast('⏳ جاري رفع الصورة...');const fd=new FormData();fd.append('file',file);fd.append('upload_preset',UPLOAD_PRESET);const res=await fetch('https://api.cloudinary.com/v1_1/'+CLOUD_NAME+'/image/upload',{method:'POST',body:fd});const data=await res.json();if(data.secure_url){await db.ref('private_messages/'+getChatId()).push({senderId:currentUser.uid,type:'image',imageUrl:data.secure_url,timestamp:Date.now()});await loadMsgs();}};inp.click();}
-    async function copyChat(){if(!chatUserId)return;const snap=await db.ref('private_messages/'+getChatId()).once('value');const msgs=snap.val()||{};let text='💬 محادثة MNAENCA\\n'+'─'.repeat(30)+'\\n';Object.values(msgs).sort((a,b)=>a.timestamp-b.timestamp).forEach(m=>{const sender=m.senderId===currentUser.uid?'أنت':(allUsers[m.senderId]?.username||'مستخدم');const content=m.type==='image'?'[صورة]':m.text;const time=new Date(m.timestamp).toLocaleTimeString('ar-SA');text+=`\\n${sender} (${time}):\\n${content}\\n`;});try{await navigator.clipboard.writeText(text);}catch(e){const ta=document.createElement('textarea');ta.value=text;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);}showToast('✅ تم نسخ المحادثة');}
+    async function copyChat(){if(!chatUserId)return;const snap=await db.ref('private_messages/'+getChatId()).once('value');const msgs=snap.val()||{};let text='💬 محادثة ZHARE\\n'+'─'.repeat(30)+'\\n';Object.values(msgs).sort((a,b)=>a.timestamp-b.timestamp).forEach(m=>{const sender=m.senderId===currentUser.uid?'أنت':(allUsers[m.senderId]?.username||'مستخدم');const content=m.type==='image'?'[صورة]':m.text;const time=new Date(m.timestamp).toLocaleTimeString('ar-SA');text+=`\\n${sender} (${time}):\\n${content}\\n`;});try{await navigator.clipboard.writeText(text);}catch(e){const ta=document.createElement('textarea');ta.value=text;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);}showToast('✅ تم نسخ المحادثة');}
     function showToast(msg){const toast=document.getElementById('toastMsg');toast.innerText=msg;toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2500);}
     function formatTime(ts){if(!ts)return'غير معروف';const diff=Date.now()-ts;const mins=Math.floor(diff/60000);const hours=Math.floor(diff/3600000);const days=Math.floor(diff/86400000);if(mins<1)return'الآن';if(mins<60)return'منذ '+mins+' دقيقة';if(hours<24)return'منذ '+hours+' ساعة';if(days<7)return'منذ '+days+' يوم';return new Date(ts).toLocaleDateString('ar-SA');}
 </script>
 </body>
 </html>"""
+
+# ═══════════════════════════════════════════════════════════
+# 🌷 7. explore.html
+# ═══════════════════════════════════════════════════════════
 
 def build_explore():
     return """<!DOCTYPE html>
@@ -2116,26 +1894,26 @@ def build_explore():
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>💖 MNAENCA | استكشاف</title>
+    <title>🌷 ZHARE | استكشاف</title>
     <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-database-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-auth-compat.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
-        :root{--accent:#ec4899;--border:rgba(236,72,153,0.12);--bg:#0a0508}
+        :root{--accent:#f472b6;--border:rgba(244,114,182,0.2);--bg:#fdf2f8}
         *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:#fff;min-height:100vh;overflow-y:auto}
-        .header{display:flex;align-items:center;gap:12px;padding:16px;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(10,5,8,0.8);backdrop-filter:blur(20px);z-index:10}
-        .btn-back{background:rgba(236,72,153,0.1);border:1px solid var(--border);width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;cursor:pointer;font-size:16px}
+        body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:#831843;min-height:100vh;overflow-y:auto}
+        .header{display:flex;align-items:center;gap:12px;padding:16px;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(255,255,255,0.8);backdrop-filter:blur(20px);z-index:10}
+        .btn-back{background:rgba(244,114,182,0.15);border:1px solid var(--border);width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#831843;cursor:pointer;font-size:16px}
         h2{font-size:18px;font-weight:700}
         .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;padding:2px}
-        .thumb{aspect-ratio:9/16;background:rgba(236,72,153,0.05);display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative;overflow:hidden}
+        .thumb{aspect-ratio:9/16;background:rgba(244,114,182,0.05);display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative;overflow:hidden}
         .thumb:hover{transform:scale(1.03);z-index:1}
         .thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
         .thumb i{position:absolute;font-size:24px;color:#fff;z-index:1;opacity:0;transition:opacity 0.3s}
         .thumb:hover i{opacity:1}
-        .thumb .views{position:absolute;bottom:4px;left:4px;font-size:10px;background:rgba(0,0,0,0.6);padding:2px 6px;border-radius:10px}
-        .spinner{width:32px;height:32px;border:3px solid rgba(236,72,153,0.2);border-top-color:var(--accent);border-radius:50%;animation:spin 0.7s linear infinite;margin:30px auto}
+        .thumb .views{position:absolute;bottom:4px;left:4px;font-size:10px;background:rgba(0,0,0,0.6);padding:2px 6px;border-radius:10px;color:#fff}
+        .spinner{width:32px;height:32px;border:3px solid rgba(244,114,182,0.2);border-top-color:var(--accent);border-radius:50%;animation:spin 0.7s linear infinite;margin:30px auto}
         @keyframes spin{to{transform:rotate(360deg)}}
     </style>
 </head>
@@ -2152,11 +1930,15 @@ def build_explore():
         const allVids=Object.entries(videos).map(([k,v])=>({id:k,...v})).sort((a,b)=>(b.likes||0)-(a.likes||0));
         const g=document.getElementById('exploreGrid');
         if(!allVids.length){g.innerHTML='<div style="text-align:center;padding:40px;grid-column:1/-1;opacity:0.5">لا توجد فيديوهات</div>';return}
-        g.innerHTML=allVids.map(v=>`<div class="thumb" onclick="window.open('${v.url}','_blank')">${v.thumbnail?`<img src="${v.thumbnail}">`:''}<i class="fas fa-play"></i><span class="views"><i class="fas fa-heart"></i> ${v.likes||0}</span></div>`).join('');
+        g.innerHTML=allVids.map(v=>`<div class="thumb" onclick="window.open('${v.url}','_blank')">${v.thumbnail?`<img src="${v.thumbnail}">`:''}<i class="fas fa-play"></i><span class="views">🌷 ${v.likes||0}</span></div>`).join('');
     }
 </script>
 </body>
 </html>"""
+
+# ═══════════════════════════════════════════════════════════
+# 🌷 8. notifications.html
+# ═══════════════════════════════════════════════════════════
 
 def build_notifications():
     return """<!DOCTYPE html>
@@ -2164,20 +1946,20 @@ def build_notifications():
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>💖 MNAENCA | إشعارات</title>
+    <title>🌷 ZHARE | إشعارات</title>
     <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-database-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-auth-compat.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
-        :root{--accent:#ec4899;--border:rgba(236,72,153,0.12);--bg:#0a0508}
+        :root{--accent:#f472b6;--border:rgba(244,114,182,0.2);--bg:#fdf2f8}
         *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:#fff;min-height:100vh;overflow-y:auto}
-        .header{display:flex;align-items:center;gap:12px;padding:16px;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(10,5,8,0.8);backdrop-filter:blur(20px);z-index:10}
-        .btn-back{background:rgba(236,72,153,0.1);border:1px solid var(--border);width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;cursor:pointer;font-size:16px}
+        body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:#831843;min-height:100vh;overflow-y:auto}
+        .header{display:flex;align-items:center;gap:12px;padding:16px;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(255,255,255,0.8);backdrop-filter:blur(20px);z-index:10}
+        .btn-back{background:rgba(244,114,182,0.15);border:1px solid var(--border);width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#831843;cursor:pointer;font-size:16px}
         .notif-item{display:flex;gap:12px;padding:14px 16px;border-bottom:1px solid var(--border);align-items:center}
-        .notif-icon{width:40px;height:40px;border-radius:50%;background:rgba(236,72,153,0.1);display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--accent)}
-        .spinner{width:32px;height:32px;border:3px solid rgba(236,72,153,0.2);border-top-color:var(--accent);border-radius:50%;animation:spin 0.7s linear infinite;margin:30px auto}
+        .notif-icon{width:40px;height:40px;border-radius:50%;background:rgba(244,114,182,0.15);display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--accent)}
+        .spinner{width:32px;height:32px;border:3px solid rgba(244,114,182,0.2);border-top-color:var(--accent);border-radius:50%;animation:spin 0.7s linear infinite;margin:30px auto}
         @keyframes spin{to{transform:rotate(360deg)}}
     </style>
 </head>
@@ -2193,12 +1975,16 @@ def build_notifications():
         const ns=snap.val()||{};
         const c=document.getElementById('notifsList');
         const items=Object.values(ns).reverse();
-        if(!items.length){c.innerHTML='<div style="text-align:center;opacity:0.5;padding:40px"><i class="fas fa-bell" style="font-size:48px;color:#ec4899;margin-bottom:12px;display:block"></i><p>لا توجد إشعارات</p></div>';return}
+        if(!items.length){c.innerHTML='<div style="text-align:center;opacity:0.5;padding:40px"><i class="fas fa-bell" style="font-size:48px;color:#f472b6;margin-bottom:12px;display:block"></i><p>لا توجد إشعارات</p></div>';return}
         c.innerHTML=items.map(n=>`<div class="notif-item"><div class="notif-icon"><i class="fas fa-bell"></i></div><div><div style="font-weight:600">${n.from||'مستخدم'}</div><div style="font-size:12px;opacity:0.6;margin-top:2px">${n.msg||''}</div></div></div>`).join('');
     }
 </script>
 </body>
 </html>"""
+
+# ═══════════════════════════════════════════════════════════
+# 🌷 9. settings.html
+# ═══════════════════════════════════════════════════════════
 
 def build_settings():
     return """<!DOCTYPE html>
@@ -2206,17 +1992,17 @@ def build_settings():
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>💖 MNAENCA | إعدادات</title>
+    <title>🌷 ZHARE | إعدادات</title>
     <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-database-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-auth-compat.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
-        :root{--accent:#ec4899;--border:rgba(236,72,153,0.12);--bg:#0a0508;--glass:rgba(236,72,153,0.03)}
+        :root{--accent:#f472b6;--border:rgba(244,114,182,0.2);--bg:#fdf2f8;--glass:rgba(244,114,182,0.06)}
         *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:#fff;min-height:100vh;overflow-y:auto}
-        .header{display:flex;align-items:center;gap:12px;padding:16px;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(10,5,8,0.8);backdrop-filter:blur(20px);z-index:10}
-        .btn-back{background:rgba(236,72,153,0.1);border:1px solid var(--border);width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;cursor:pointer;font-size:16px}
+        body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:#831843;min-height:100vh;overflow-y:auto}
+        .header{display:flex;align-items:center;gap:12px;padding:16px;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(255,255,255,0.8);backdrop-filter:blur(20px);z-index:10}
+        .btn-back{background:rgba(244,114,182,0.15);border:1px solid var(--border);width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#831843;cursor:pointer;font-size:16px}
         .setting-item{display:flex;justify-content:space-between;align-items:center;padding:16px;border-bottom:1px solid var(--border);cursor:pointer;transition:background 0.2s}
         .setting-item:hover{background:var(--glass)}
         .setting-item i{color:var(--accent);font-size:18px;width:30px}
@@ -2229,7 +2015,7 @@ def build_settings():
     <div class="setting-item" onclick="window.location.href='profile.html'"><div style="display:flex;align-items:center;gap:12px"><i class="fas fa-user"></i><span>تعديل الملف الشخصي</span></div><i class="fas fa-chevron-left" style="opacity:0.5"></i></div>
     <div class="setting-item"><div style="display:flex;align-items:center;gap:12px"><i class="fas fa-lock"></i><span>الخصوصية</span></div><i class="fas fa-chevron-left" style="opacity:0.5"></i></div>
     <div class="setting-item"><div style="display:flex;align-items:center;gap:12px"><i class="fas fa-globe"></i><span>اللغة</span></div><span style="opacity:0.5;font-size:13px">العربية</span></div>
-    <div class="setting-item"><div style="display:flex;align-items:center;gap:12px"><i class="fas fa-info-circle"></i><span>حول التطبيق</span></div><span style="opacity:0.5;font-size:13px">v2026.1 💖</span></div>
+    <div class="setting-item"><div style="display:flex;align-items:center;gap:12px"><i class="fas fa-info-circle"></i><span>حول التطبيق</span></div><span style="opacity:0.5;font-size:13px">v2026.1 🌷</span></div>
     <button class="btn-danger" onclick="if(confirm('تسجيل الخروج؟')){auth.signOut();window.location.href='auth.html'}"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</button>
 </div>
 <script src="firebase-config.js"></script>
@@ -2238,16 +2024,16 @@ def build_settings():
 </html>"""
 
 # ═══════════════════════════════════════════════════════════
-# 💖 MAIN
+# 🌷 MAIN
 # ═══════════════════════════════════════════════════════════
 
 def main():
     print("""
 ╔══════════════════════════════════════════════════════════╗
 ║                                                          ║
-║  💖  MNAENCA 2026 - ROSE GOLD ULTRA EDITION  ✨      ║
-║     Ultimate Generator - 9 Files - 2000+ Lines           ║
-║     🕳️  Black Hole Fade Transition Added              ║
+║  🌷  ZHARE 2026 - PINK BLOSSOM ULTRA EDITION  ✨     ║
+║     Ultimate Generator - 9 Files - 2200+ Lines           ║
+║     🎥 WITH SCROLL TRANSITION EFFECT                     ║
 ║                                                          ║
 ╚══════════════════════════════════════════════════════════╝
     """)
@@ -2266,7 +2052,7 @@ def main():
     
     print(f"""
 {'='*60}
-  💖 BUILD COMPLETE - تم الإنشاء بنجاح! ✨
+  🌷 BUILD COMPLETE - تم الإنشاء بنجاح! ✨
 {'='*60}
 
   📊 إحصائيات:
@@ -2276,31 +2062,26 @@ def main():
   📁 الملفات:
      1. firebase-config.js   → إعدادات Firebase + Cloudinary
      2. auth.html            → تسجيل دخول + اشتراك
-     3. index.html           → الرئيسية + 🎭 Mask Reveal + 🕳️ Black Hole Fade
-     4. profile.html         → ملف شخصي + فيديوهات متلاصقة
+     3. index.html           → الرئيسية + مشغل فيديو + تأثير تمرير
+     4. profile.html         → ملف شخصي + فيديوهات + أدمن
      5. upload.html          → رفع فيديو
      6. chat.html            → دردشة + عارض صور داخلي
      7. explore.html         → استكشاف
      8. notifications.html   → صفحة الإشعارات
      9. settings.html        → إعدادات
 
-  🔥 بيانات الاتصال الجديدة:
+  🌷 المميزات الجديدة:
+     • 🎥 تأثير التمرير عند ظهور الفيديو
+     • 🎬 انتقال سلس مع cubic-bezier
+     • 💖 الفيديو يظهر من الأسفل للأعلى بشفافية
+
+  🔑 بيانات الاتصال الجديدة:
      • Firebase: bomk-9f6ec
      • Cloudinary: kmdcjwoi / fo23_go
      • Admin: jasim28v@gmail.com
 
-  💖 المميزات:
-     • 🕳️ Black Hole Fade Transition (تقنية التلاشي بين الفيديوهات)
-        - CSS: opacity 0 → 1 مع transition 0.5s ease
-        - تأثير ::after radial-gradient للإحساس بالثقب الأسود
-        - تفعيل تلقائي مع Intersection Observer
-     • 🎭 Mask Reveal Transition (Rose Gold Glow)
-     • 🎥 مشغل فيديو احترافي داخلي
-     • 🖼️ عارض صور داخلي
-     • 💖 ستايل وردي فاخر مع توهجات بنفسجية
-
-  💖 للتشغيل: شغّل الملف وبعدها افتح auth.html في المتصفح
-  💖 MNAENCA ROSE GOLD READY! ✨
+  🌷 للتشغيل: python scraper.py
+  🌷 ZHARE READY WITH SCROLL MAGIC! ✨
 {'='*60}
     """)
 
